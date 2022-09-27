@@ -1,0 +1,73 @@
+{
+  "name": "@ckeditor/strapi-plugin-ckeditor",
+  "version": "0.0.1",
+  "description": "CKEditor 5 custom field for Strapi.",
+  "strapi": {
+    "name": "ckeditor",
+    "description": "The rich text editor for every use case",
+    "kind": "plugin",
+    "displayName": "CKEditor"
+  },
+  "keywords": [
+    "strapi",
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "wysiwyg",
+    "rich text",
+    "editor"
+  ],
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js"
+  ],
+  "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^35.1.0",
+    "@ckeditor/ckeditor5-autoformat": "^35.1.0",
+    "@ckeditor/ckeditor5-autosave": "^35.1.0",
+    "@ckeditor/ckeditor5-basic-styles": "^35.1.0",
+    "@ckeditor/ckeditor5-block-quote": "^35.1.0",
+    "@ckeditor/ckeditor5-code-block": "^35.1.0",
+    "@ckeditor/ckeditor5-easy-image": "^35.1.0",
+    "@ckeditor/ckeditor5-editor-classic": "^35.1.0",
+    "@ckeditor/ckeditor5-essentials": "^35.1.0",
+    "@ckeditor/ckeditor5-find-and-replace": "^35.1.0",
+    "@ckeditor/ckeditor5-font": "^35.1.0",
+    "@ckeditor/ckeditor5-heading": "^35.1.0",
+    "@ckeditor/ckeditor5-highlight": "^35.1.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^35.1.0",
+    "@ckeditor/ckeditor5-image": "^35.1.0",
+    "@ckeditor/ckeditor5-indent": "^35.1.0",
+    "@ckeditor/ckeditor5-language": "^35.1.0",
+    "@ckeditor/ckeditor5-link": "^35.1.0",
+    "@ckeditor/ckeditor5-list": "^35.1.0",
+    "@ckeditor/ckeditor5-page-break": "^35.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^35.1.0",
+    "@ckeditor/ckeditor5-paste-from-office": "^35.1.0",
+    "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@ckeditor/ckeditor5-remove-format": "^35.1.0",
+    "@ckeditor/ckeditor5-special-characters": "^35.1.0",
+    "@ckeditor/ckeditor5-table": "^35.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^35.1.0",
+    "@ckeditor/ckeditor5-upload": "^35.1.0",
+    "@ckeditor/ckeditor5-word-count": "^35.1.0",
+    "@reinmar/ckeditor5-maximum-length": "^0.0.1",
+    "ckeditor5": "^35.1.0"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/strapi-plugin-ckeditor.git"
+  },
+  "author": "CKSource (http://cksource.com/)",
+  "homepage": "https://market.strapi.io/plugins/@ckeditor-strapi-plugin-ckeditor",
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
