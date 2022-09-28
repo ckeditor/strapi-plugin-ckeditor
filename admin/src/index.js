@@ -1,5 +1,4 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin';
-import getTrad from './utils/getTrad';
 import * as yup from 'yup';
 
 import React from 'react';
@@ -30,11 +29,11 @@ export default {
         );
       },
       intlLabel: {
-        id: getTrad('ckeditor.label'),
+        id: 'ckeditor.label',
         defaultMessage: 'CKEditor'
       },
       intlDescription: {
-        id:  getTrad('ckeditor.description'),
+        id:  'ckeditor.description',
         defaultMessage: 'The rich text editor for every use case'
       },
       components: {
@@ -44,11 +43,11 @@ export default {
         base: [
           {
             intlLabel: {
-              id: getTrad('ckeditor.preset.label'),
+              id: 'ckeditor.preset.label',
               defaultMessage: 'Choose editor version',
             },
             description: {
-              id: getTrad('ckeditor.preset.description'),
+              id: 'ckeditor.preset.description',
               defaultMessage: "Do you need more or less features?",
             },
             name: 'options.preset',
@@ -59,7 +58,7 @@ export default {
                 value: 'light',
                 metadatas: {
                   intlLabel: {
-                    id: getTrad('ckeditor.preset.light.label'),
+                    id: 'ckeditor.preset.light.label',
                     defaultMessage: 'Light version'
                   }
                 }
@@ -69,7 +68,7 @@ export default {
                 value: 'standard',
                 metadatas: {
                   intlLabel: {
-                    id: getTrad('ckeditor.preset.standard.label'),
+                    id: 'ckeditor.preset.standard.label',
                     defaultMessage: 'Standard version'
                   }
                 }
@@ -95,11 +94,11 @@ export default {
                 name: 'required',
                 type: 'checkbox',
                 intlLabel: {
-                  id:  getTrad('ckeditor.required.label'),
+                  id:  'ckeditor.required.label',
                   defaultMessage: 'Required field',
                 },
                 description: {
-                  id:  getTrad('ckeditor.required.description'),
+                  id:  'ckeditor.required.description',
                   defaultMessage: "You won't be able to create an entry if this field is empty",
                 },
               },
@@ -111,7 +110,7 @@ export default {
                 name: 'maxLengthCharacters',
                 type: 'checkbox-with-number-field',
                 intlLabel: {
-                  id: getTrad('ckeditor.maxLength.label'),
+                  id: 'ckeditor.maxLength.label',
                   defaultMessage: 'Maximum length (characters)',
                 }
               }
@@ -120,7 +119,7 @@ export default {
         ],
         validator: args => ({
           preset: yup.string().required({
-            id: getTrad('ckeditor.preset.error.required'),
+            id: 'ckeditor.preset.error.required',
             defaultMessage: 'Editor preset is required',
           }),
         }),
@@ -133,7 +132,7 @@ export default {
         return import(`./translations/${locale}.json`)
           .then(({ default: data }) => {
             return {
-              data: prefixPluginTranslations(data, pluginId),
+              data: data,
               locale,
             };
           })
