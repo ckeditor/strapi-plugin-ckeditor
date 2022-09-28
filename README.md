@@ -1,5 +1,7 @@
 # CKEditor 5 custom field for Strapi
 
+<img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
+
 This package provides a custom field for Strapi that lets you use and configure CKEditor in no time.
 
 Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
