@@ -78,7 +78,7 @@ export default {
                 value: 'rich',
                 metadatas: {
                   intlLabel: {
-                    id: getTrad('ckeditor.preset.rich.label'),
+                    id: 'ckeditor.preset.rich.label',
                     defaultMessage: 'Rich version'
                   }
                 }
