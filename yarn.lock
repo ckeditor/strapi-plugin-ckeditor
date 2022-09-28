@@ -143,6 +143,13 @@
   dependencies:
     ckeditor5 "^35.1.0"
 
+"@ckeditor/ckeditor5-html-embed@^35.1.0":
+  version "35.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-html-embed/-/ckeditor5-html-embed-35.1.0.tgz#fc3cd2061ac423213416258bd6690f5f409d3d3f"
+  integrity sha512-enNll2U2HiMqsn/PiwzWym5KNFwb6z2HQlL7nTjN0UUFWHUV3HZt+6GsRtJ9dDdRFGPPYgLOFDQmiHxPbuxp9g==
+  dependencies:
+    ckeditor5 "^35.1.0"
+
 "@ckeditor/ckeditor5-image@^35.1.0":
   version "35.1.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-35.1.0.tgz#93bf632a9d57a84591a2da6e027651f484eed4eb"
@@ -179,6 +186,14 @@
   version "35.1.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-list/-/ckeditor5-list-35.1.0.tgz#6247f7d98eb63fcbf512e555c0b95ae723d5f5f8"
   integrity sha512-NsGNRhYDI9xNm0wac3sE640LzpUSxQAzi60f2ap8p2pSL2RXpPJ3YA8Z+xmYP4xpJpu1eEcbOUnZDXjsKoct1Q==
+  dependencies:
+    "@ckeditor/ckeditor5-ui" "^35.1.0"
+    ckeditor5 "^35.1.0"
+
+"@ckeditor/ckeditor5-media-embed@^35.1.0":
+  version "35.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-media-embed/-/ckeditor5-media-embed-35.1.0.tgz#6080ee47602e9b40870a15af28e0ddc8d1242839"
+  integrity sha512-PpEXBE89KFFmrDpNKNbp52XPNOPr6rZXc+TOwd18E9R6upUATfLlajb5N2DYFqC7/DiW2pPJ9sSEF4SJZwNDkw==
   dependencies:
     "@ckeditor/ckeditor5-ui" "^35.1.0"
     ckeditor5 "^35.1.0"

@@ -74,6 +74,16 @@ export default {
                     defaultMessage: 'Standard version'
                   }
                 }
+              },
+              {
+                key: 'rich',
+                value: 'rich',
+                metadatas: {
+                  intlLabel: {
+                    id: getTrad('ckeditor.preset.rich.label'),
+                    defaultMessage: 'Rich version'
+                  }
+                }
               }
             ],
           },
