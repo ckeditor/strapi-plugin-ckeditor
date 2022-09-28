@@ -7,11 +7,6 @@ Inspired by https://github.com/nshenderov/strapi-plugin-ckeditor, copyright nshe
 
 Licensed under the terms of [MIT License](https://opensource.org/licenses/MIT).
 
-Sources of Intellectual Property Included in CKEditor
------------------------------------------------------
-
-Where not otherwise indicated, all CKEditor content is authored by CKSource engineers and consists of CKSource-owned intellectual property. In some specific instances, CKEditor will incorporate work done by developers outside of CKSource with their express permission.
-
 Trademarks
 ----------
 
