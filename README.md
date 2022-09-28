@@ -80,7 +80,7 @@ mkdir -p src/plugins
 Now we should clone this repository so we can work on it.
 
 ```
-git clone git@github.com:cksource/strapi-plugin-ckeditor.git src/plugins/strapi-plugin-ckeditor
+git clone git@github.com:ckeditor/strapi-plugin-ckeditor.git src/plugins/strapi-plugin-ckeditor
 ```
 
 Let's add an entry inside `./package.json` file so, we won't need to use `yarn` inside plugin itself.
