@@ -1,5 +1,4 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin';
-import pluginId from './pluginId';
 import getTrad from './utils/getTrad';
 import * as yup from 'yup';
 
@@ -22,7 +21,7 @@ export default {
     app.customFields.register({
       name: 'CKEditor',
       type: 'richtext',
-      pluginId: pluginId,
+      pluginId: 'ckeditor',
       icon: () => {
         return (
           <IconBox justifyContent="center" alignItems="center" width={7} height={6} hasRadius aria-hidden>
