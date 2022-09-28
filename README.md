@@ -111,5 +111,5 @@ Rebuild the project and start the server:
 
 ```
 yarn build
-yarn start
+yarn develop
 ```
