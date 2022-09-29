@@ -4,7 +4,7 @@ import { Stack } from '@strapi/design-system/Stack';
 import { Field, FieldHint, FieldError, FieldLabel } from '@strapi/design-system/Field';
 import PropTypes from "prop-types";
 
-import { GlobalStyling } from "./GlobalStyling";
+import { getGlobalStyling } from "./GlobalStyling";
 import Configurator from "./Configurator";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -29,6 +29,9 @@ const CKEditorInput = ({
   const editorConfig = configurator.getEditorConfig();
 
   const wordCounter = useRef(null);
+
+  const strapiTheme = localStorage.getItem("STRAPI_THEME");
+  const GlobalStyling = getGlobalStyling(strapiTheme);
 
   return (
     <Field
