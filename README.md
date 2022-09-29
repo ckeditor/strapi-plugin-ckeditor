@@ -32,22 +32,6 @@ With `yarn`:
 yarn add @ckeditor/strapi-plugin-ckeditor
 ```
 
-In `config/plugins.js` file add:
-
-```js
-ckeditor: true
-```
-
-If you do not yet have this file, then create and add:
-
-```js
-module.exports = () => {
-    return {
-        ckeditor: true
-    }
-}
-```
-
 Then run build:
 
 ```bash
@@ -66,10 +50,10 @@ This section covers the way how to configure your environment if you want to con
 
 ### Setting up the environment
 
-In order to start making changes in the plugin you first need to install Strapi infrastructure on top of the plugin repository. At the time of writing the guide, since you need the custom-fields feature you need to use this particular version of Strapi.
+In order to start making changes in the plugin you first need to install Strapi infrastructure on top of the plugin repository.
 
 ```
-npx create-strapi-app@custom-fields --quickstart strapi
+npx create-strapi-app --quickstart strapi
 cd strapi
 ```
 
@@ -101,12 +85,12 @@ Now we need to register plugin so strapi can use it. In order to do that we need
 to create (if not already created) `./config/plugins.js` file and add entry to it.
 
 ```
-module.exports = {
+module.exports = ({ env }) => ({
   ckeditor: {
     enabled: true,
     resolve: "./src/plugins/strapi-plugin-ckeditor"
   },
-};
+});
 ```
 
 Rebuild the project and start the server:
