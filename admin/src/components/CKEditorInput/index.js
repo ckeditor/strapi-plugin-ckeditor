@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { Stack } from '@strapi/design-system/Stack';
 import { Field, FieldHint, FieldError, FieldLabel } from '@strapi/design-system/Field';
@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 import { getGlobalStyling } from "./GlobalStyling";
 import Configurator from "./Configurator";
+import MediaLib from "../MediaLib";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ckeditor5Dll from "ckeditor5/build/ckeditor5-dll.js";
@@ -33,6 +34,25 @@ const CKEditorInput = ({
   const strapiTheme = localStorage.getItem("STRAPI_THEME");
   const GlobalStyling = getGlobalStyling(strapiTheme);
 
+  const [mediaLibVisible, setMediaLibVisible] = useState(false);
+
+  const handleToggleMediaLib = () => setMediaLibVisible(prev => !prev);
+
+  const handleChangeAssets = assets => {
+    let newValue = value ? value : '';
+
+    assets.map(asset => {
+      if (asset.mime.includes('image')) {
+        const imgTag = `<p><img src="${asset.url}" alt="${asset.alt}"></img></p>`;
+
+        newValue = `${newValue}${imgTag}`
+      }
+    });
+
+    onChange({ target: { name, value: newValue } });
+    handleToggleMediaLib();
+  };
+
   return (
     <Field
       name={name}
@@ -54,6 +74,9 @@ const CKEditorInput = ({
             const wordCountPlugin = editor.plugins.get( 'WordCount' );
             const wordCountWrapper = wordCounter.current;
             wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
+
+            const mediaLibPlugin = editor.plugins.get('strapiMediaLib');
+            mediaLibPlugin.connect(handleToggleMediaLib);
           }}
           onChange={(event, editor) => {
             const data = editor.getData();
@@ -72,6 +95,7 @@ const CKEditorInput = ({
         <FieldHint />
         <FieldError />
       </Stack>
+      <MediaLib isOpen={mediaLibVisible} onChange={handleChangeAssets} onToggle={handleToggleMediaLib} />
     </Field>
   );
 };
