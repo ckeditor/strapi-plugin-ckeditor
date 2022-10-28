@@ -14,7 +14,8 @@ This is an official plugin, provided to you by the [CKEditor team](https://ckedi
 * **Predefined editor presets:** a couple predefined editor presets (sets of CKEditor 5 plugins and their configuration) to choose from.
 * **Custom max length validation:** Twitter-like length validation with visual indicators, based on the number of characters in the text, not the HTML string.
 * **Dark mode support:** because you like it.
-* **More features coming soon:** Media library and upload adapter integrations, more granular editor toolbar and plugins configuration, and more.
+* **Media library integration:** inserting images directly from Strapi's media library.
+* **More features coming soon:** upload adapter integration, more granular editor toolbar and plugins configuration, and more.
 
 ## <a id="installation"></a>🔧 Installation
 
