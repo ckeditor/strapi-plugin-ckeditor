@@ -24,6 +24,7 @@ const CKEditorInput = ({
   description,
   error
 }) => {
+  const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
   const maxLength = attribute.maxLengthCharacters;
   const configurator = new Configurator( { options: attribute.options, maxLength } );
@@ -39,17 +40,18 @@ const CKEditorInput = ({
   const handleToggleMediaLib = () => setMediaLibVisible(prev => !prev);
 
   const handleChangeAssets = assets => {
-    let newValue = value ? value : '';
+    let imageHtmlString = '';
 
     assets.map(asset => {
       if (asset.mime.includes('image')) {
-        const imgTag = `<p><img src="${asset.url}" alt="${asset.alt}"></img></p>`;
-
-        newValue = `${newValue}${imgTag}`
+        imageHtmlString += `<img src="${asset.url}" alt="${asset.alt}" />`;
       }
     });
 
-    onChange({ target: { name, value: newValue } });
+    const viewFragment = editorInstance.data.processor.toView( imageHtmlString );
+    const modelFragment = editorInstance.data.toModel( viewFragment );
+    editorInstance.model.insertContent( modelFragment );
+
     handleToggleMediaLib();
   };
 
@@ -75,8 +77,10 @@ const CKEditorInput = ({
             const wordCountWrapper = wordCounter.current;
             wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
 
-            const mediaLibPlugin = editor.plugins.get('strapiMediaLib');
-            mediaLibPlugin.connect(handleToggleMediaLib);
+            const mediaLibPlugin = editor.plugins.get( 'strapiMediaLib' );
+            mediaLibPlugin.connect( handleToggleMediaLib );
+
+            setEditorInstance( editor );
           }}
           onChange={(event, editor) => {
             const data = editor.getData();
