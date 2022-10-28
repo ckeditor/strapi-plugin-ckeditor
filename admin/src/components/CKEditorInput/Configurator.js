@@ -20,6 +20,7 @@ import ckeditor5RemoveFormatDll from "@ckeditor/ckeditor5-remove-format/build/re
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
+import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
@@ -43,14 +44,15 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableToolbar,
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
-      window.CKEditor5.wordCount.WordCount
+      window.CKEditor5.wordCount.WordCount,
+      StrapiMediaLib
     ],
     toolbar: [
       'heading',
       '|',
       'bold', 'italic', 'link', 'bulletedList', 'numberedList',
       '|',
-      'uploadImage', 'insertTable',
+      'strapiMediaLib', 'insertTable',
       '|',
       'undo', 'redo'
     ],
@@ -101,6 +103,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
+      StrapiMediaLib
     ],
     toolbar: [
         'heading',
@@ -109,7 +112,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'outdent', 'indent',
         '|',
-        'uploadImage', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
+        'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
         '|',
         'undo', 'redo'
     ],
@@ -174,6 +177,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
+      StrapiMediaLib
     ],
     toolbar: [
         'heading',
@@ -184,7 +188,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'outdent', 'indent', 'alignment',
         '|',
-        'uploadImage', 'mediaEmbed', 'blockQuote', 'insertTable', 'horizontalLine', 'codeBlock', 'htmlEmbed',
+        'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'horizontalLine', 'codeBlock', 'htmlEmbed',
         '|',
         'undo', 'redo'
     ],

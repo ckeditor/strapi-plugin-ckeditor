@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { Stack } from '@strapi/design-system/Stack';
 import { Field, FieldHint, FieldError, FieldLabel } from '@strapi/design-system/Field';
@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 import { getGlobalStyling } from "./GlobalStyling";
 import Configurator from "./Configurator";
+import MediaLib from "../MediaLib";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ckeditor5Dll from "ckeditor5/build/ckeditor5-dll.js";
@@ -23,6 +24,7 @@ const CKEditorInput = ({
   description,
   error
 }) => {
+  const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
   const maxLength = attribute.maxLengthCharacters;
   const configurator = new Configurator( { options: attribute.options, maxLength } );
@@ -32,6 +34,26 @@ const CKEditorInput = ({
 
   const strapiTheme = localStorage.getItem("STRAPI_THEME");
   const GlobalStyling = getGlobalStyling(strapiTheme);
+
+  const [mediaLibVisible, setMediaLibVisible] = useState(false);
+
+  const handleToggleMediaLib = () => setMediaLibVisible(prev => !prev);
+
+  const handleChangeAssets = assets => {
+    let imageHtmlString = '';
+
+    assets.map(asset => {
+      if (asset.mime.includes('image')) {
+        imageHtmlString += `<img src="${asset.url}" alt="${asset.alt}" />`;
+      }
+    });
+
+    const viewFragment = editorInstance.data.processor.toView( imageHtmlString );
+    const modelFragment = editorInstance.data.toModel( viewFragment );
+    editorInstance.model.insertContent( modelFragment );
+
+    handleToggleMediaLib();
+  };
 
   return (
     <Field
@@ -54,6 +76,11 @@ const CKEditorInput = ({
             const wordCountPlugin = editor.plugins.get( 'WordCount' );
             const wordCountWrapper = wordCounter.current;
             wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
+
+            const mediaLibPlugin = editor.plugins.get( 'strapiMediaLib' );
+            mediaLibPlugin.connect( handleToggleMediaLib );
+
+            setEditorInstance( editor );
           }}
           onChange={(event, editor) => {
             const data = editor.getData();
@@ -72,6 +99,7 @@ const CKEditorInput = ({
         <FieldHint />
         <FieldError />
       </Stack>
+      <MediaLib isOpen={mediaLibVisible} onChange={handleChangeAssets} onToggle={handleToggleMediaLib} />
     </Field>
   );
 };
