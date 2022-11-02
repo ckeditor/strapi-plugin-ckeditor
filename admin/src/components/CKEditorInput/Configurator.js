@@ -16,7 +16,9 @@ import ckeditor5IndentDll from "@ckeditor/ckeditor5-indent/build/indent.js";
 import ckeditor5LinkDll from "@ckeditor/ckeditor5-link/build/link.js";
 import ckeditor5ListDll from "@ckeditor/ckeditor5-list/build/list.js";
 import ckeditor5PasteFromOfficeDll from "@ckeditor/ckeditor5-paste-from-office/build/paste-from-office.js";
+import ckeditor5FindAndReplaceDll from "@ckeditor/ckeditor5-find-and-replace/build/find-and-replace.js";
 import ckeditor5RemoveFormatDll from "@ckeditor/ckeditor5-remove-format/build/remove-format.js";
+import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-characters/build/special-characters.js";
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
@@ -145,6 +147,11 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.autoformat.Autoformat,
       window.CKEditor5.basicStyles.Bold,
       window.CKEditor5.basicStyles.Italic,
+      window.CKEditor5.basicStyles.Underline,
+      window.CKEditor5.basicStyles.Strikethrough,
+      window.CKEditor5.basicStyles.Code,
+      window.CKEditor5.basicStyles.Subscript,
+      window.CKEditor5.basicStyles.Superscript,
       window.CKEditor5.blockQuote.BlockQuote,
       window.CKEditor5.codeBlock.CodeBlock,
       window.CKEditor5.essentials.Essentials,
@@ -152,6 +159,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.font.FontFamily,
       window.CKEditor5.font.FontColor,
       window.CKEditor5.font.FontBackgroundColor,
+      window.CKEditor5.findAndReplace.FindAndReplace,
       window.CKEditor5.heading.Heading,
       window.CKEditor5.horizontalLine.HorizontalLine,
       window.CKEditor5.htmlEmbed.HtmlEmbed,
@@ -166,10 +174,14 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.link.Link,
       window.CKEditor5.link.LinkImage,
       window.CKEditor5.list.List,
+      window.CKEditor5.list.ListProperties,
+      window.CKEditor5.list.TodoList,
       window.CKEditor5.mediaEmbed.MediaEmbed,
       window.CKEditor5.paragraph.Paragraph,
       window.CKEditor5.pasteFromOffice.PasteFromOffice,
       window.CKEditor5.removeFormat.RemoveFormat,
+      window.CKEditor5.specialCharacters.SpecialCharacters,
+      window.CKEditor5.specialCharacters.SpecialCharactersEssentials,
       window.CKEditor5.table.Table,
       window.CKEditor5.table.TableToolbar,
       window.CKEditor5.table.TableProperties,
@@ -182,16 +194,28 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     toolbar: [
         'heading',
         '|',
-        'bold', 'italic', 'link', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'removeFormat',
+        'bold', 'italic', 'underline', 'strikethrough', 'code','subscript', 'superscript', 'link', 'specialCharacters',
         '|',
-        'bulletedList', 'numberedList',
+        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'removeFormat',
+        '|',
+        'bulletedList', 'numberedList', 'todoList',
         '|',
         'outdent', 'indent', 'alignment',
         '|',
         'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'horizontalLine', 'codeBlock', 'htmlEmbed',
         '|',
-        'undo', 'redo'
+        'undo', 'redo',
+        '|',
+        'findAndReplace'
+
     ],
+    list: {
+        properties: {
+            styles: true,
+            startIndex: true,
+            reversed: true
+        }
+    },
     image: {
       resizeUnit: "%",
       resizeOptions: [ {
