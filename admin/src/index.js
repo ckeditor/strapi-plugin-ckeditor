@@ -107,7 +107,7 @@ export default {
               // We want to apply this to the number of characters in the editor,
               // hence – a unique name.
               {
-                name: 'maxLengthCharacters',
+                name: 'options.maxLengthCharacters',
                 type: 'checkbox-with-number-field',
                 intlLabel: {
                   id: 'ckeditor.maxLength.label',
