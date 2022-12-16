@@ -26,8 +26,8 @@ const CKEditorInput = ({
 }) => {
   const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
-  const maxLength = attribute.maxLengthCharacters;
-  const configurator = new Configurator( { options: attribute.options, maxLength } );
+  const { maxLengthCharacters:maxLength , ...options } = attribute.options;
+  const configurator = new Configurator( { options, maxLength } );
   const editorConfig = configurator.getEditorConfig();
 
   const wordCounter = useRef(null);
