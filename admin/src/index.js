@@ -85,6 +85,41 @@ export default {
               }
             ],
           },
+          {
+            intlLabel: {
+              id: 'ckeditor.output.label',
+              defaultMessage: 'Choose output type',
+            },
+            description: {
+              id: 'ckeditor.output.description',
+              defaultMessage: "Decide, whether you want to get your output in HTML or Markdown",
+            },
+            name: 'options.output',
+            type: 'select',
+            defaultValue: 'HTML',
+            options: [
+              {
+                key: 'html',
+                value: 'HTML',
+                metadatas: {
+                  intlLabel: {
+                    id: 'ckeditor.output.html.label',
+                    defaultMessage: 'HTML'
+                  }
+                }
+              },
+              {
+                key: 'markdown',
+                value: 'Markdown',
+                metadatas: {
+                  intlLabel: {
+                    id: 'ckeditor.output.markdown.label',
+                    defaultMessage: 'Markdown'
+                  }
+                }
+              }
+            ]
+          }
         ],
         advanced: [
           {

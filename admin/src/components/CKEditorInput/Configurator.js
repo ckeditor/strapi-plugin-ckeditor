@@ -10,6 +10,7 @@ import ckeditor5FontDll from "@ckeditor/ckeditor5-font/build/font.js";
 import ckeditor5HeadingDll from "@ckeditor/ckeditor5-heading/build/heading.js";
 import ckeditor5HtmlEmbedDll from "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
 import ckeditor5HorizontalLineDll from "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
+import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
 import ckeditor5MediaEmbedDll from "@ckeditor/ckeditor5-media-embed/build/media-embed.js";
 import ckeditor5ImageDll from "@ckeditor/ckeditor5-image/build/image.js";
 import ckeditor5IndentDll from "@ckeditor/ckeditor5-indent/build/indent.js";
@@ -311,11 +312,18 @@ export default class Configurator {
   getEditorConfig() {
     const config = this._getBaseConfig();
 
-    if ( this.fieldConfig.maxLength ) {
+    const maxLength = this.fieldConfig.maxLength;
+    const outputOption = this.fieldConfig.options.output;
+
+    if ( outputOption === 'Markdown' ) {
+      config.plugins.push( window.CKEditor5.markdownGfm.Markdown );
+    }
+
+    if ( maxLength ) {
       config.plugins.push( window.CKEditor5.maximumLength.MaximumLength );
 
       config.maximumLength = {
-        characters: this.fieldConfig.maxLength
+        characters: maxLength
       };
     }
 
