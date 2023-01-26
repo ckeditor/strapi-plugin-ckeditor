@@ -8,5 +8,7 @@
   "ckeditor.settings": "Settings",
   "ckeditor.required.label": "Required field",
   "ckeditor.required.description": "You won't be able to create an entry if this field is empty",
-  "ckeditor.preset.error.required'": "Editor preset is required"
+  "ckeditor.preset.error.required'": "Editor preset is required",
+  "ckeditor.output.label": "Choose output type",
+  "ckeditor.output.description": "Decide, whether you want to get your output in HTML or Markdown"
 }
