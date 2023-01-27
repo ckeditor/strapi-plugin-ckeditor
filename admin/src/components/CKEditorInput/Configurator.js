@@ -8,6 +8,7 @@ import ckeditor5CodeBlockDll from "@ckeditor/ckeditor5-code-block/build/code-blo
 import ckeditor5EssentialsDll from "@ckeditor/ckeditor5-essentials/build/essentials.js";
 import ckeditor5FontDll from "@ckeditor/ckeditor5-font/build/font.js";
 import ckeditor5HeadingDll from "@ckeditor/ckeditor5-heading/build/heading.js";
+import ckeditor5HighlightDll from '@ckeditor/ckeditor5-highlight/build/highlight.js';
 import ckeditor5HtmlEmbedDll from "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
 import ckeditor5HorizontalLineDll from "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
 import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
@@ -180,6 +181,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.font.FontBackgroundColor,
       window.CKEditor5.findAndReplace.FindAndReplace,
       window.CKEditor5.heading.Heading,
+      window.CKEditor5.highlight.Highlight,
       window.CKEditor5.horizontalLine.HorizontalLine,
       window.CKEditor5.htmlEmbed.HtmlEmbed,
       window.CKEditor5.image.Image,
@@ -229,7 +231,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         {
           label: 'More media',
           icon: 'threeVerticalDots',
-          items: [ 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters' ]
+          items: [ 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight' ]
         },
         '|',
         'alignment',
