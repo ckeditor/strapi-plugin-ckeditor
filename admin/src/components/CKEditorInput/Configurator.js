@@ -210,27 +210,40 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.wordCount.WordCount,
       StrapiMediaLib
     ],
-    toolbar: [
-        'undo', 'redo',
-        '|',
+    toolbar: {
+      items: [
         'heading',
-        '|',
-        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
-        '|',
-        'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'code', 'removeFormat',
+        {
+          label: 'Fonts',
+          withText: true,
+          items: [ 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor' ]
+        },
+        'bold', 'italic', 'underline',
+        {
+          label: 'More basic styles',
+          icon: 'threeVerticalDots',
+          items: [ 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat' ]
+        },
         '|',
         'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 
+        {
+          label: 'More media',
+          icon: 'threeVerticalDots',
+          items: [ 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters' ]
+        },
         '|',
         'alignment',
+        {
+          label: 'Lists',
+          withText: true,
+          items: [ 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent' ]
+        }, 
+        'findAndReplace',
         '|',
-        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
-        '|',
-        'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters',
-        '|',
-
-        'findAndReplace'
-    ],
-    shouldNotGroupWhenFull: true,
+        'undo', 'redo'
+      ],
+      shouldNotGroupWhenFull: true
+    },
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
