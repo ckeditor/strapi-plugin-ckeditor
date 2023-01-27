@@ -119,15 +119,15 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       StrapiMediaLib
     ],
     toolbar: [
+        'undo', 'redo',
+        '|',
         'heading',
         '|',
-        'bold', 'italic', 'link', 'bulletedList', 'numberedList',
+        'bold', 'italic',
         '|',
-        'outdent', 'indent',
+        'link', 'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
         '|',
-        'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
-        '|',
-        'undo', 'redo'
+        'bulletedList', 'numberedList', 'outdent', 'indent'
     ],
     heading: {
       options: [
