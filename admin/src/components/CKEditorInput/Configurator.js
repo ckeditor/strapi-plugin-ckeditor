@@ -8,6 +8,7 @@ import ckeditor5CodeBlockDll from "@ckeditor/ckeditor5-code-block/build/code-blo
 import ckeditor5EssentialsDll from "@ckeditor/ckeditor5-essentials/build/essentials.js";
 import ckeditor5FontDll from "@ckeditor/ckeditor5-font/build/font.js";
 import ckeditor5HeadingDll from "@ckeditor/ckeditor5-heading/build/heading.js";
+import ckeditor5HighlightDll from '@ckeditor/ckeditor5-highlight/build/highlight.js';
 import ckeditor5HtmlEmbedDll from "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
 import ckeditor5HorizontalLineDll from "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
 import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
@@ -208,39 +209,26 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
+      window.CKEditor5.highlight.Highlight,
       StrapiMediaLib
     ],
     toolbar: {
       items: [
         'heading',
-        {
-          label: 'Fonts',
-          withText: true,
-          items: [ 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor' ]
-        },
-        'bold', 'italic', 'underline',
-        {
-          label: 'More basic styles',
-          icon: 'threeVerticalDots',
-          items: [ 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat' ]
-        },
         '|',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 
-        {
-          label: 'More media',
-          icon: 'threeVerticalDots',
-          items: [ 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters' ]
-        },
+        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
+        '|',
+        'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat',
+        '|',
+        'undo', 'redo',
+        '-',
+        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
         '|',
         'alignment',
-        {
-          label: 'Lists',
-          withText: true,
-          items: [ 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent' ]
-        }, 
-        'findAndReplace',
         '|',
-        'undo', 'redo'
+        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
+        '|',
+        'findAndReplace'
       ],
       shouldNotGroupWhenFull: true
     },
