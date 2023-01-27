@@ -218,6 +218,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       items: [
         'undo', 'redo',
         '|',
+        'findAndReplace', 'selectAll',
+        '|',
         'heading',
         '|',
         'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
@@ -229,8 +231,6 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'alignment',
         '|',
         'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
-        '|',
-        'findAndReplace'
       ],
       shouldNotGroupWhenFull: true
     },
