@@ -52,13 +52,15 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       StrapiMediaLib
     ],
     toolbar: [
+      'undo', 'redo',
+      '|',
       'heading',
       '|',
-      'bold', 'italic', 'link', 'bulletedList', 'numberedList',
+      'bold', 'italic',
       '|',
-      'strapiMediaLib', 'insertTable',
+      'link', 'strapiMediaLib', 'insertTable',
       '|',
-      'undo', 'redo'
+      'bulletedList', 'numberedList'
     ],
     heading: {
       options: [
@@ -214,13 +216,13 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     ],
     toolbar: {
       items: [
+        'undo', 'redo',
+        '|',
         'heading',
         '|',
         'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
         '|',
         'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat',
-        '|',
-        'undo', 'redo',
         '-',
         'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
         '|',
