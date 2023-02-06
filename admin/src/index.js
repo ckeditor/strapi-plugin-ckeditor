@@ -7,7 +7,7 @@ import { Icon } from '@strapi/design-system/Icon';
 import { Flex } from '@strapi/design-system/Flex';
 import CKEditorIcon from './CKEditorIcon';
 
-const IconBox = styled(Flex)`
+const IconBox = styled( Flex )`
   background-color: #f0f0ff; /* primary100 */
   border: 1px solid #d9d8ff; /* primary200 */
   svg > path {
@@ -16,15 +16,15 @@ const IconBox = styled(Flex)`
 `;
 
 export default {
-  register(app) {
-    app.customFields.register({
+  register( app ) {
+    app.customFields.register( {
       name: 'CKEditor',
       type: 'richtext',
       pluginId: 'ckeditor',
       icon: () => {
         return (
-          <IconBox justifyContent="center" alignItems="center" width={7} height={6} hasRadius aria-hidden>
-            <Icon as={CKEditorIcon} />
+          <IconBox justifyContent="center" alignItems="center" width={ 7 } height={ 6 } hasRadius aria-hidden>
+            <Icon as={ CKEditorIcon } />
           </IconBox>
         );
       },
@@ -37,7 +37,7 @@ export default {
         defaultMessage: 'The rich text editor for every use case'
       },
       components: {
-        Input: async () => import('./components/CKEditorInput'),
+        Input: async () => import( './components/CKEditorInput' ),
       },
       options: {
         base: [
@@ -152,34 +152,34 @@ export default {
             ],
           },
         ],
-        validator: args => ({
-          preset: yup.string().required({
+        validator: args => ( {
+          preset: yup.string().required( {
             id: 'ckeditor.preset.error.required',
             defaultMessage: 'Editor preset is required',
-          }),
-        }),
+          } ),
+        } ),
       },
-    });
+    } );
   },
-  async registerTrads({ locales }) {
+  async registerTrads( { locales } ) {
     const importedTrads = await Promise.all(
-      locales.map((locale) => {
-        return import(`./translations/${locale}.json`)
-          .then(({ default: data }) => {
+      locales.map( ( locale ) => {
+        return import( `./translations/${ locale }.json` )
+          .then( ( { default: data } ) => {
             return {
               data: data,
               locale,
             };
-          })
-          .catch(() => {
+          } )
+          .catch( () => {
             return {
               data: {},
               locale,
             };
-          });
-      })
+          } );
+      } )
     );
 
-    return Promise.resolve(importedTrads);
+    return Promise.resolve( importedTrads );
   },
 };
