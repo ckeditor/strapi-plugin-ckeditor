@@ -23,33 +23,33 @@ export class StrapiMediaLib extends Plugin {
 
   init() {
     const editor = this.editor;
-    editor.ui.componentFactory.add('strapiMediaLib', () => {
+    editor.ui.componentFactory.add( 'strapiMediaLib', () => {
 
       const button = new ButtonView();
 
-      button.set({
+      button.set( {
         label: "Media Library",
         icon: mediaLibIcon,
         tooltip: true
-      });
+      } );
 
-      button.on('execute', this.toggle.bind(this));
+      button.on( 'execute', this.toggle.bind( this ) );
 
       return button;
-    });
+    } );
   }
 
-  connect(strapiToggle) {
-    if(typeof strapiToggle !== 'function') {
-      throw new Error('Input parameter for toogle should be a function');
+  connect( strapiToggle ) {
+    if( typeof strapiToggle !== 'function' ) {
+      throw new Error( 'Input parameter for toogle should be a function' );
     }
 
     this.strapiToggle = strapiToggle;
   }
 
   toggle() {
-    if(typeof this.strapiToggle !== 'function') {
-      throw new Error('Strapi media library toggle function not connected. Use connect function first');
+    if ( typeof this.strapiToggle !== 'function' ) {
+      throw new Error( 'Strapi media library toggle function not connected. Use connect function first' );
     }
 
     this.strapiToggle();
