@@ -45,6 +45,17 @@ or:
 yarn build
 ```
 
+## <a id="usage"></a>📖 Usage
+
+This section covers the way how to use the plugin.
+
+To add a CKEditor field to a collection type or single type, follow these steps:
+
+1. Click the "Add another field" button to open the component selection modal.
+2. In the top right corner of the modal, click "Custom".
+3. Select "CKEditor" from the list of options.
+4. Configure any additional options as needed, and click "Save" to add the CKEditor field to your collection type or single type.
+
 ## <a id="contributing"></a>🛠 Contributing
 
 This section covers the way how to configure your environment if you want to contribute to this package.
