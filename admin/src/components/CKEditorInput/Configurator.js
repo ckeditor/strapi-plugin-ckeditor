@@ -15,11 +15,13 @@ import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdow
 import ckeditor5MediaEmbedDll from "@ckeditor/ckeditor5-media-embed/build/media-embed.js";
 import ckeditor5ImageDll from "@ckeditor/ckeditor5-image/build/image.js";
 import ckeditor5IndentDll from "@ckeditor/ckeditor5-indent/build/indent.js";
+import ckeditor5LanguageDll from "@ckeditor/ckeditor5-language/build/language.js";
 import ckeditor5LinkDll from "@ckeditor/ckeditor5-link/build/link.js";
 import ckeditor5ListDll from "@ckeditor/ckeditor5-list/build/list.js";
 import ckeditor5PasteFromOfficeDll from "@ckeditor/ckeditor5-paste-from-office/build/paste-from-office.js";
 import ckeditor5FindAndReplaceDll from "@ckeditor/ckeditor5-find-and-replace/build/find-and-replace.js";
 import ckeditor5RemoveFormatDll from "@ckeditor/ckeditor5-remove-format/build/remove-format.js";
+import ckeditor5SourceEditingDll from "@ckeditor/ckeditor5-source-editing/build/source-editing.js";
 import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-characters/build/special-characters.js";
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
@@ -193,6 +195,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.image.ImageResize,
       window.CKEditor5.indent.Indent,
       window.CKEditor5.indent.IndentBlock,
+      window.CKEditor5.language.TextPartLanguage,
       window.CKEditor5.link.Link,
       window.CKEditor5.link.LinkImage,
       window.CKEditor5.list.List,
@@ -202,6 +205,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.paragraph.Paragraph,
       window.CKEditor5.pasteFromOffice.PasteFromOffice,
       window.CKEditor5.removeFormat.RemoveFormat,
+      window.CKEditor5.sourceEditing.SourceEditing,
       window.CKEditor5.specialCharacters.SpecialCharacters,
       window.CKEditor5.specialCharacters.SpecialCharactersEssentials,
       window.CKEditor5.table.Table,
@@ -230,7 +234,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'alignment',
         '|',
-        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
+        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 'textPartLanguage', 'sourceEditing',
       ],
       shouldNotGroupWhenFull: true
     },
@@ -331,6 +335,12 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       columns: 5,
       documentColors: 10,
     },
+    language: {
+      textPartLanguage: [
+          { title: 'English', languageCode: 'en' },
+          { title: 'Finnish', languageCode: 'fi' },
+      ]
+    }
   }
 };
 
