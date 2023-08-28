@@ -43,9 +43,21 @@ export const style = css`
       font-weight: 400;
     }
 
+    p.small {
+      font-size: 0.875em;
+      line-height: 1.5em;
+      margin-bottom: 0.8em;
+    }
+
     p {
       font-size: 1em;
       line-height: 1.6em;
+      margin-bottom: 0.8em;
+    }
+
+    p.lead {
+      font-size: 1.25em;
+      line-height: 1.7em;
       margin-bottom: 0.8em;
     }
 
