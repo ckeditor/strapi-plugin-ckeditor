@@ -65,8 +65,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'paragraph', title: 'Lead', class: 'lead' },
-        { model: 'paragraph', title: 'Small', class: 'small' },
+        { model: 'paragraphLead', view: { name: 'p', classes: 'lead' }, title: 'Lead', class: 'lead', converterPriority: 'high' },
+        { model: 'paragraphSmall', view: { name: 'p', classes: 'small' }, title: 'Small', class: 'small', converterPriority: 'high' },
         { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
@@ -137,8 +137,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'paragraph', title: 'Lead', class: 'lead' },
-        { model: 'paragraph', title: 'Small', class: 'small' },
+        { model: 'paragraphLead', view: { name: 'p', classes: 'lead' }, title: 'Lead', class: 'lead', converterPriority: 'high' },
+        { model: 'paragraphSmall', view: { name: 'p', classes: 'small' }, title: 'Small', class: 'small', converterPriority: 'high' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
         { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
@@ -241,6 +241,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+        { model: 'paragraphLead', view: { name: 'p', classes: 'lead' }, title: 'Lead', class: 'lead', converterPriority: 'high' },
+        { model: 'paragraphSmall', view: { name: 'p', classes: 'small' }, title: 'Small', class: 'small', converterPriority: 'high' },
         { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },

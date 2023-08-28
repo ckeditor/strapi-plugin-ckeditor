@@ -44,7 +44,7 @@ export const style = css`
     }
 
     p.small {
-      font-size: 0.875em;
+      font-size: 0.75em;
       line-height: 1.5em;
       margin-bottom: 0.8em;
     }
