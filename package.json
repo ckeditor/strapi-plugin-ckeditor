@@ -1,6 +1,6 @@
 {
-  "name": "@ckeditor/strapi-plugin-ckeditor",
-  "version": "0.0.8",
+  "name": "smarty/strapi-plugin-ckeditor",
+  "version": "0.0.1",
   "description": "CKEditor 5 custom field for Strapi.",
   "strapi": {
     "name": "ckeditor",
@@ -15,7 +15,8 @@
     "ckeditor 5",
     "wysiwyg",
     "rich text",
-    "editor"
+    "editor",
+    "smarty"
   ],
   "files": [
     "admin",
