@@ -57,7 +57,7 @@
     "@ckeditor/ckeditor5-upload": "^39.0.2",
     "@ckeditor/ckeditor5-word-count": "^39.0.2",
     "@reinmar/ckeditor5-maximum-length": "^0.0.1",
-    "ckeditor5": "^36.0.0"
+    "ckeditor5": "^39.0.2"
   },
   "peerDependencies": {
     "@strapi/strapi": "^4.4.0"
