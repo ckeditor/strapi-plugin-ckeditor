@@ -69,7 +69,7 @@
   "author": "CKSource (http://cksource.com/)",
   "homepage": "https://market.strapi.io/plugins/@ckeditor-strapi-plugin-ckeditor",
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=18.x.x <=20.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
