@@ -135,6 +135,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.horizontalLine.HorizontalLine,
       StrapiMediaLib
     ],
+    mediaEmbed: { previewsInData: true } ,
     toolbar: [
         'undo', 'redo',
         '|',
@@ -242,6 +243,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.highlight.Highlight,
       StrapiMediaLib
     ],
+    mediaEmbed: { previewsInData: true } ,
     toolbar: {
       items: [
         'undo', 'redo',
