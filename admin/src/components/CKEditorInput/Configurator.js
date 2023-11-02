@@ -125,6 +125,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.link.LinkImage,
       window.CKEditor5.list.List,
       window.CKEditor5.mediaEmbed.MediaEmbed,
+      window.CKEditor5.htmlEmbed.HtmlEmbed,
       window.CKEditor5.paragraph.Paragraph,
       window.CKEditor5.pasteFromOffice.PasteFromOffice,
       window.CKEditor5.table.Table,
@@ -143,7 +144,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'bold', 'italic',
         '|',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'horizontalLine', 'blockQuote', 'insertTable', 'codeBlock',
+        'link', 'strapiMediaLib', 'htmlEmbed', 'horizontalLine', 'blockQuote', 'insertTable', 'codeBlock',
         '|',
         'bulletedList', 'numberedList', 'outdent', 'indent'
     ],
