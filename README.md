@@ -1,4 +1,4 @@
-# CKEditor 5 custom field for Strapi
+# CKEditor 5 custom field for Strapi, with AWS Bedrock AI powered capabilities
 
 <img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
 
@@ -6,7 +6,7 @@ This package provides a custom field for Strapi that lets you use and configure 
 
 Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
 
-This is an official plugin, provided to you by the [CKEditor team](https://ckeditor.com) 👋
+This is NOT an official plugin! 👋
 
 ## <a id="features"></a>✨ Features
 
@@ -16,6 +16,7 @@ This is an official plugin, provided to you by the [CKEditor team](https://ckedi
 * **Dark mode support:** because you like it.
 * **Media library integration:** inserting images directly from Strapi's media library.
 * **More features coming soon:** upload adapter integration, more granular editor toolbar and plugins configuration, and more.
+* **AWS Bedrock AI powered capabilities:** AI powered content productivity.[![3ABCrQ.png](https://a.l3n.co/i/3ABCrQ.png)](https://lensdump.com/i/3ABCrQ)
 
 ## <a id="installation"></a>🔧 Installation
 
@@ -44,6 +45,10 @@ or:
 ```bash
 yarn build
 ```
+
+## <a id="config"></a>🚀 Configuration
+
+[![3ABQNe.png](https://c.l3n.co/i/3ABQNe.png)](https://lensdump.com/i/3ABQNe)
 
 ## <a id="contributing"></a>🛠 Contributing
 

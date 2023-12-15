@@ -43,6 +43,54 @@ export default {
         base: [
           {
             intlLabel: {
+              id: 'ckeditor.ai.licenseKey.label',
+              defaultMessage: 'licenseKey',
+            },
+            description: {
+              id: 'ckeditor.ai.licenseKey.description',
+              defaultMessage: 'AI license key',
+            },
+            name: 'options.ai.licenseKey',
+            type: 'string',
+          },
+          {
+            intlLabel: {
+              id: 'ckeditor.bedrock.region.label',
+              defaultMessage: 'region',
+            },
+            description: {
+              id: 'ckeditor.bedrock.region.description',
+              defaultMessage: 'bedrock region',
+            },
+            name: 'options.bedrock.region',
+            type: 'string',
+          },
+          {
+            intlLabel: {
+              id: 'ckeditor.bedrock.credentials.accessKeyId.label',
+              defaultMessage: 'accessKeyId',
+            },
+            description: {
+              id: 'ckeditor.bedrock.credentials.accessKeyId.description',
+              defaultMessage: 'bedrock credentials accessKeyId',
+            },
+            name: 'options.bedrock.credentials.accessKeyId',
+            type: 'string',
+          },
+          {
+            intlLabel: {
+              id: 'ckeditor.bedrock.credentials.secretAccessKey.label',
+              defaultMessage: 'secretAccessKey',
+            },
+            description: {
+              id: 'ckeditor.bedrock.credentials.secretAccessKey.description',
+              defaultMessage: 'bedrock credentials secretAccessKey',
+            },
+            name: 'options.bedrock.credentials.secretAccessKey',
+            type: 'string',
+          },
+          {
+            intlLabel: {
               id: 'ckeditor.preset.label',
               defaultMessage: 'Choose editor version',
             },
