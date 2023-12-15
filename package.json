@@ -1,7 +1,10 @@
 {
-  "name": "@ckeditor/strapi-plugin-ckeditor",
+  "name": "@jeff-tian/strapi-plugin-ckeditor",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.11",
-  "description": "CKEditor 5 custom field for Strapi.",
+  "description": "CKEditor 5 custom field for Strapi, with AWS Bedrock AI powered capabilities",
   "strapi": {
     "name": "ckeditor",
     "description": "The rich text editor for every use case",
@@ -66,10 +69,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ckeditor/strapi-plugin-ckeditor.git"
+    "url": "https://github.com/jeff-tian/strapi-plugin-ckeditor.git"
   },
-  "author": "CKSource (http://cksource.com/)",
-  "homepage": "https://market.strapi.io/plugins/@ckeditor-strapi-plugin-ckeditor",
+  "author": "Jeff Tian <jeff.tian@outlook.com>",
+  "homepage": "https://github.com/jeff-tian/strapi-plugin-ckeditor.git",
   "engines": {
     "npm": ">=6.0.0"
   },
