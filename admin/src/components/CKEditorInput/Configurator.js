@@ -386,11 +386,12 @@ export default class Configurator {
         rich.licenseKey = this.fieldConfig.options.ai.licenseKey;
 
         const apiUrl = this.fieldConfig.options.ai.apiUrl;
-        if (apiUrl) {
+        if (apiUrl && apiUrl.length > 0) {
           rich.ai.aws = {
             apiUrl: this.fieldConfig.options.ai.apiUrl
           };
         } else {
+          rich.ai.aws = {};
           rich.ai.aws.bedrockClientConfiguration = {
             region: this.fieldConfig.options.bedrock.region,
             credentials: {
