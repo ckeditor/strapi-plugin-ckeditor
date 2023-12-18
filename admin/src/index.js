@@ -1,30 +1,31 @@
-import { prefixPluginTranslations } from '@strapi/helper-plugin';
+import {prefixPluginTranslations} from '@strapi/helper-plugin';
 import * as yup from 'yup';
 
 import React from 'react';
 import styled from 'styled-components';
-import { Icon } from '@strapi/design-system/Icon';
-import { Flex } from '@strapi/design-system/Flex';
+import {Icon} from '@strapi/design-system/Icon';
+import {Flex} from '@strapi/design-system/Flex';
 import CKEditorIcon from './CKEditorIcon';
 
-const IconBox = styled( Flex )`
+const IconBox = styled(Flex)`
   background-color: #f0f0ff; /* primary100 */
   border: 1px solid #d9d8ff; /* primary200 */
+
   svg > path {
     fill: #4945ff; /* primary600 */
   }
 `;
 
 export default {
-  register( app ) {
-    app.customFields.register( {
+  register(app) {
+    app.customFields.register({
       name: 'CKEditor',
       type: 'richtext',
       pluginId: 'ckeditor',
       icon: () => {
         return (
-          <IconBox justifyContent="center" alignItems="center" width={ 7 } height={ 6 } hasRadius aria-hidden>
-            <Icon as={ CKEditorIcon } />
+          <IconBox justifyContent="center" alignItems="center" width={7} height={6} hasRadius aria-hidden>
+            <Icon as={CKEditorIcon}/>
           </IconBox>
         );
       },
@@ -33,7 +34,7 @@ export default {
         defaultMessage: 'CKEditor'
       },
       intlDescription: {
-        id:  'ckeditor.description',
+        id: 'ckeditor.description',
         defaultMessage: 'The rich text editor for every use case'
       },
       components: {
@@ -51,6 +52,18 @@ export default {
               defaultMessage: 'AI license key',
             },
             name: 'options.ai.licenseKey',
+            type: 'string',
+          },
+          {
+            intlLabel: {
+              id: 'ckeditor.ai.apiUrl.label',
+              defaultMessage: 'apiUrl',
+            },
+            description: {
+              id: 'ckeditor.ai.apiUrl.description',
+              defaultMessage: 'AI api url',
+            },
+            name: 'options.ai.apiUrl',
             type: 'string',
           },
           {
@@ -177,11 +190,11 @@ export default {
                 name: 'required',
                 type: 'checkbox',
                 intlLabel: {
-                  id:  'ckeditor.required.label',
+                  id: 'ckeditor.required.label',
                   defaultMessage: 'Required field',
                 },
                 description: {
-                  id:  'ckeditor.required.description',
+                  id: 'ckeditor.required.description',
                   defaultMessage: "You won't be able to create an entry if this field is empty",
                 },
               },
@@ -200,34 +213,34 @@ export default {
             ],
           },
         ],
-        validator: args => ( {
-          preset: yup.string().required( {
+        validator: args => ({
+          preset: yup.string().required({
             id: 'ckeditor.preset.error.required',
             defaultMessage: 'Editor preset is required',
-          } ),
-        } ),
+          }),
+        }),
       },
-    } );
+    });
   },
-  async registerTrads( { locales } ) {
+  async registerTrads({locales}) {
     const importedTrads = await Promise.all(
-      locales.map( ( locale ) => {
-        return import( `./translations/${ locale }.json` )
-          .then( ( { default: data } ) => {
+      locales.map((locale) => {
+        return import( `./translations/${locale}.json` )
+          .then(({default: data}) => {
             return {
               data: data,
               locale,
             };
-          } )
-          .catch( () => {
+          })
+          .catch(() => {
             return {
               data: {},
               locale,
             };
-          } );
-      } )
+          });
+      })
     );
 
-    return Promise.resolve( importedTrads );
+    return Promise.resolve(importedTrads);
   },
 };

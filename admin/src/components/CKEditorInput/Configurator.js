@@ -241,15 +241,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     },
     ai: {
       aws: {
-        bedrockClientConfiguration: {
-          // Fill in your service region, e.g. 'us-west-2'.
-          region: 'us-east-1',
-          credentials: {
-            // Paste your credentials in place of YOUR_ACCESS_KEY_ID and YOUR_SECRET_ACCESS_KEY.
-            accessKeyId: 'YOUR_ACCESS_KEY_ID',
-            secretAccessKey: 'YOUR_SECRET_ACCESS_KEY'
-          }
-        }
+        apiUrl: '/api/hello'
       }
       // ...
     },
@@ -392,13 +384,21 @@ export default class Configurator {
         const rich = CKEDITOR_BASE_CONFIG_FOR_PRESETS.rich;
 
         rich.licenseKey = this.fieldConfig.options.ai.licenseKey;
-        rich.ai.aws.bedrockClientConfiguration = {
-          region: this.fieldConfig.options.bedrock.region,
-          credentials: {
-            accessKeyId: this.fieldConfig.options.bedrock.credentials.accessKeyId,
-            secretAccessKey: this.fieldConfig.options.bedrock.credentials.secretAccessKey
-          }
-        };
+
+        const apiUrl = this.fieldConfig.options.ai.apiUrl;
+        if (apiUrl) {
+          rich.ai.aws = {
+            apiUrl: this.fieldConfig.options.ai.apiUrl
+          };
+        } else {
+          rich.ai.aws.bedrockClientConfiguration = {
+            region: this.fieldConfig.options.bedrock.region,
+            credentials: {
+              accessKeyId: this.fieldConfig.options.bedrock.credentials.accessKeyId,
+              secretAccessKey: this.fieldConfig.options.bedrock.credentials.secretAccessKey
+            }
+          };
+        }
 
         console.log('rich = ', rich);
         return rich;
