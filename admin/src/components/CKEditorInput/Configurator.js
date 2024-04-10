@@ -23,6 +23,7 @@ import ckeditor5RemoveFormatDll from "@ckeditor/ckeditor5-remove-format/build/re
 import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-characters/build/special-characters.js";
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
+import ckeditor5ShowBlocksDll from "@ckeditor/ckeditor5-show-blocks/build/show-blocks.js";
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
@@ -212,6 +213,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
       window.CKEditor5.highlight.Highlight,
+      window.CKEditor5.showBlocks.ShowBlocks,
       StrapiMediaLib
     ],
     toolbar: {
@@ -219,6 +221,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'undo', 'redo',
         '|',
         'findAndReplace', 'selectAll',
+        'showBlocks',
+        '|',
         '|',
         'heading',
         '|',

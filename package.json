@@ -57,6 +57,7 @@
     "@ckeditor/ckeditor5-upload": "^41.2.1",
     "@ckeditor/ckeditor5-word-count": "^41.2.1",
     "@reinmar/ckeditor5-maximum-length": "^0.0.1",
+    "@ckeditor/ckeditor5-show-blocks": "^41.3.0",
     "ckeditor5": "^41.2.1"
   },
   "peerDependencies": {
