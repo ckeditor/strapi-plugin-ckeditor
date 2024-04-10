@@ -223,7 +223,6 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       items: [
         'undo', 'redo',
         '|',
-        'findAndReplace', 'selectAll',
         'showBlocks',
         '|',
         'sourceEditing',
@@ -321,6 +320,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     fontFamily: {
       options: [
         'default',
+        'Inter, sans-serif',
         'Arial, Helvetica Neue, Helvetica, Source Sans Pro, sans-serif',
         'Courier New, Courier, monospace',
         'Georgia, serif',
