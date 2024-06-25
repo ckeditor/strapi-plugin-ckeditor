@@ -8,10 +8,10 @@ import ckeditor5CodeBlockDll from "@ckeditor/ckeditor5-code-block/build/code-blo
 import ckeditor5EssentialsDll from "@ckeditor/ckeditor5-essentials/build/essentials.js";
 import ckeditor5FontDll from "@ckeditor/ckeditor5-font/build/font.js";
 import ckeditor5HeadingDll from "@ckeditor/ckeditor5-heading/build/heading.js";
-import ckeditor5HighlightDll from '@ckeditor/ckeditor5-highlight/build/highlight.js';
+import ckeditor5HighlightDll from "@ckeditor/ckeditor5-highlight/build/highlight.js";
 import ckeditor5HtmlEmbedDll from "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
 import ckeditor5HorizontalLineDll from "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
-import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
+import ckeditor5MarkdownDll from "@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm";
 import ckeditor5MediaEmbedDll from "@ckeditor/ckeditor5-media-embed/build/media-embed.js";
 import ckeditor5ImageDll from "@ckeditor/ckeditor5-image/build/image.js";
 import ckeditor5IndentDll from "@ckeditor/ckeditor5-indent/build/indent.js";
@@ -49,46 +49,33 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
-      StrapiMediaLib
+      StrapiMediaLib,
     ],
     toolbar: [
-      'undo', 'redo',
-      '|',
-      'heading',
-      '|',
-      'bold', 'italic',
-      '|',
-      'link', 'strapiMediaLib', 'insertTable',
-      '|',
-      'bulletedList', 'numberedList'
+      "undo",
+      "redo",
+      "|",
+      "heading",
+      "|",
+      "bold",
+      "italic",
+      "|",
+      "link",
     ],
     heading: {
       options: [
-        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-      ]
-    },
-    image: {
-      toolbar: [
-        'imageStyle:inline',
-        'imageStyle:block',
-        'imageStyle:side',
-        '|',
-        'toggleImageCaption',
-        'imageTextAlternative'
-      ]
-    },
-    table: {
-      contentToolbar: [
-        'tableColumn',
-        'tableRow',
-        'mergeTableCells',
-        '|',
-        'toggleTableCaption'
-      ]
+        {
+          model: "paragraph",
+          title: "Paragraph",
+          class: "ck-heading_paragraph",
+        },
+        {
+          model: "heading2",
+          view: "h2",
+          title: "Heading 2",
+          class: "ck-heading_heading2",
+        },
+      ],
     },
   },
 
@@ -118,48 +105,82 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
-      StrapiMediaLib
+      StrapiMediaLib,
     ],
     toolbar: [
-        'undo', 'redo',
-        '|',
-        'heading',
-        '|',
-        'bold', 'italic',
-        '|',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
-        '|',
-        'bulletedList', 'numberedList', 'outdent', 'indent'
+      "undo",
+      "redo",
+      "|",
+      "heading",
+      "|",
+      "bold",
+      "italic",
+      "|",
+      "link",
+      "strapiMediaLib",
+      "mediaEmbed",
+      "blockQuote",
+      "insertTable",
+      "codeBlock",
+      "|",
+      "bulletedList",
+      "numberedList",
+      "outdent",
+      "indent",
     ],
     heading: {
       options: [
-        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-      ]
+        {
+          model: "paragraph",
+          title: "Paragraph",
+          class: "ck-heading_paragraph",
+        },
+        {
+          model: "heading1",
+          view: "h1",
+          title: "Heading 1",
+          class: "ck-heading_heading1",
+        },
+        {
+          model: "heading2",
+          view: "h2",
+          title: "Heading 2",
+          class: "ck-heading_heading2",
+        },
+        {
+          model: "heading3",
+          view: "h3",
+          title: "Heading 3",
+          class: "ck-heading_heading3",
+        },
+        {
+          model: "heading4",
+          view: "h4",
+          title: "Heading 4",
+          class: "ck-heading_heading4",
+        },
+      ],
     },
     image: {
       toolbar: [
-        'imageStyle:inline',
-        'imageStyle:block',
-        'imageStyle:side',
-        '|',
-        'toggleImageCaption',
-        'imageTextAlternative',
-        '|',
-        'linkImage'
-      ]
+        "imageStyle:inline",
+        "imageStyle:block",
+        "imageStyle:side",
+        "|",
+        "toggleImageCaption",
+        "imageTextAlternative",
+        "|",
+        "linkImage",
+      ],
     },
     table: {
       contentToolbar: [
-        'tableColumn',
-        'tableRow',
-        'mergeTableCells',
-        '|',
-        'toggleTableCaption'
-      ]
+        "tableColumn",
+        "tableRow",
+        "mergeTableCells",
+        "|",
+        "toggleTableCaption",
+      ],
     },
   },
 
@@ -212,116 +233,163 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
       window.CKEditor5.highlight.Highlight,
-      StrapiMediaLib
+      StrapiMediaLib,
     ],
     toolbar: {
       items: [
-        'undo', 'redo',
-        '|',
-        'findAndReplace', 'selectAll',
-        '|',
-        'heading',
-        '|',
-        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
-        '|',
-        'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat',
-        '-',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
-        '|',
-        'alignment',
-        '|',
-        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
+        "undo",
+        "redo",
+        "|",
+        "findAndReplace",
+        "selectAll",
+        "|",
+        "heading",
+        "|",
+        "fontSize",
+        "fontFamily",
+        "fontColor",
+        "fontBackgroundColor",
+        "|",
+        "bold",
+        "italic",
+        "underline",
+        "strikethrough",
+        "superscript",
+        "subscript",
+        "code",
+        "removeFormat",
+        "-",
+        "link",
+        "strapiMediaLib",
+        "mediaEmbed",
+        "insertTable",
+        "horizontalLine",
+        "blockQuote",
+        "codeBlock",
+        "htmlEmbed",
+        "specialCharacters",
+        "highlight",
+        "|",
+        "alignment",
+        "|",
+        "bulletedList",
+        "numberedList",
+        "todoList",
+        "outdent",
+        "indent",
       ],
-      shouldNotGroupWhenFull: true
+      shouldNotGroupWhenFull: true,
     },
     heading: {
       options: [
-        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-      ]
+        {
+          model: "paragraph",
+          title: "Paragraph",
+          class: "ck-heading_paragraph",
+        },
+        {
+          model: "heading1",
+          view: "h1",
+          title: "Heading 1",
+          class: "ck-heading_heading1",
+        },
+        {
+          model: "heading2",
+          view: "h2",
+          title: "Heading 2",
+          class: "ck-heading_heading2",
+        },
+        {
+          model: "heading3",
+          view: "h3",
+          title: "Heading 3",
+          class: "ck-heading_heading3",
+        },
+        {
+          model: "heading4",
+          view: "h4",
+          title: "Heading 4",
+          class: "ck-heading_heading4",
+        },
+      ],
     },
     list: {
       properties: {
-          styles: true,
-          startIndex: true,
-          reversed: true
-      }
+        styles: true,
+        startIndex: true,
+        reversed: true,
+      },
     },
     image: {
       resizeUnit: "%",
-      resizeOptions: [ {
-        name: 'resizeImage:original',
-        value: null,
-        icon: 'original'
-      },
-      {
-        name: 'resizeImage:25',
-        value: '25',
-        icon: 'small'
-      },
-      {
-        name: 'resizeImage:50',
-        value: '50',
-        icon: 'medium'
-      },
-      {
-        name: 'resizeImage:75',
-        value: '75',
-        icon: 'large'
-      } ],
+      resizeOptions: [
+        {
+          name: "resizeImage:original",
+          value: null,
+          icon: "original",
+        },
+        {
+          name: "resizeImage:25",
+          value: "25",
+          icon: "small",
+        },
+        {
+          name: "resizeImage:50",
+          value: "50",
+          icon: "medium",
+        },
+        {
+          name: "resizeImage:75",
+          value: "75",
+          icon: "large",
+        },
+      ],
       toolbar: [
-        'imageStyle:inline', 'imageStyle:block', 'imageStyle:side',
-        '|',
-        'toggleImageCaption', 'imageTextAlternative',
-        '|',
-        'linkImage',
-        '|',
-        'resizeImage:25', 'resizeImage:50', 'resizeImage:75', 'resizeImage:original'
-      ]
+        "imageStyle:inline",
+        "imageStyle:block",
+        "imageStyle:side",
+        "|",
+        "toggleImageCaption",
+        "imageTextAlternative",
+        "|",
+        "linkImage",
+        "|",
+        "resizeImage:25",
+        "resizeImage:50",
+        "resizeImage:75",
+        "resizeImage:original",
+      ],
     },
     table: {
       contentToolbar: [
-        'tableColumn',
-        'tableRow',
-        'mergeTableCells',
-        '|',
-        'tableCellProperties',
-        'tableProperties',
-        '|',
-        'toggleTableCaption'
-      ]
+        "tableColumn",
+        "tableRow",
+        "mergeTableCells",
+        "|",
+        "tableCellProperties",
+        "tableProperties",
+        "|",
+        "toggleTableCaption",
+      ],
     },
     fontSize: {
-      options: [
-          9,
-          11,
-          13,
-          'default',
-          17,
-          19,
-          21,
-          27,
-          35,
-      ],
-      supportAllValues: false
+      options: [9, 11, 13, "default", 17, 19, 21, 27, 35],
+      supportAllValues: false,
     },
     fontFamily: {
       options: [
-        'default',
-        'Arial, Helvetica Neue, Helvetica, Source Sans Pro, sans-serif',
-        'Courier New, Courier, monospace',
-        'Georgia, serif',
-        'Lucida Sans Unicode, Lucida Grande, sans-serif',
-        'Tahoma, Geneva, sans-serif',
-        'Times New Roman, Times, serif',
-        'Trebuchet MS, Helvetica, sans-serif',
-        'Verdana, Geneva, sans-serif',
-        'Roboto, Roboto Black, Roboto Medium, Roboto Light, sans-serif',
+        "default",
+        "Arial, Helvetica Neue, Helvetica, Source Sans Pro, sans-serif",
+        "Courier New, Courier, monospace",
+        "Georgia, serif",
+        "Lucida Sans Unicode, Lucida Grande, sans-serif",
+        "Tahoma, Geneva, sans-serif",
+        "Times New Roman, Times, serif",
+        "Trebuchet MS, Helvetica, sans-serif",
+        "Verdana, Geneva, sans-serif",
+        "Roboto, Roboto Black, Roboto Medium, Roboto Light, sans-serif",
       ],
-      supportAllValues: true
+      supportAllValues: true,
     },
     fontColor: {
       columns: 5,
@@ -331,11 +399,11 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       columns: 5,
       documentColors: 10,
     },
-  }
+  },
 };
 
 export default class Configurator {
-  constructor ( fieldConfig ) {
+  constructor(fieldConfig) {
     this.fieldConfig = fieldConfig;
   }
 
@@ -345,15 +413,15 @@ export default class Configurator {
     const maxLength = this.fieldConfig.maxLength;
     const outputOption = this.fieldConfig.options.output;
 
-    if ( outputOption === 'Markdown' ) {
-      config.plugins.push( window.CKEditor5.markdownGfm.Markdown );
+    if (outputOption === "Markdown") {
+      config.plugins.push(window.CKEditor5.markdownGfm.Markdown);
     }
 
-    if ( maxLength ) {
-      config.plugins.push( window.CKEditor5.maximumLength.MaximumLength );
+    if (maxLength) {
+      config.plugins.push(window.CKEditor5.maximumLength.MaximumLength);
 
       config.maximumLength = {
-        characters: maxLength
+        characters: maxLength,
       };
     }
 
@@ -363,15 +431,15 @@ export default class Configurator {
   _getBaseConfig() {
     const presetName = this.fieldConfig.options.preset;
 
-    switch ( presetName ) {
-      case 'light':
+    switch (presetName) {
+      case "light":
         return CKEDITOR_BASE_CONFIG_FOR_PRESETS.light;
-      case 'standard':
+      case "standard":
         return CKEDITOR_BASE_CONFIG_FOR_PRESETS.standard;
-      case 'rich':
+      case "rich":
         return CKEDITOR_BASE_CONFIG_FOR_PRESETS.rich;
       default:
-        throw new Error('Invalid preset name ' + presetName);
+        throw new Error("Invalid preset name " + presetName);
     }
   }
 }
