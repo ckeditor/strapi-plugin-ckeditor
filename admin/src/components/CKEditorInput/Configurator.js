@@ -29,6 +29,7 @@ import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
     plugins: [
+      window.CKEditor5.alignment.Alignment,
       window.CKEditor5.autoformat.Autoformat,
       window.CKEditor5.basicStyles.Bold,
       window.CKEditor5.basicStyles.Italic,
@@ -61,6 +62,10 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       "italic",
       "|",
       "link",
+      "bulletedList",
+      "numberedList",
+      "|",
+      "alignment",
     ],
     heading: {
       options: [
@@ -74,6 +79,12 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           view: "h2",
           title: "Heading 2",
           class: "ck-heading_heading2",
+        },
+        {
+          model: "heading3",
+          view: "h3",
+          title: "Heading 3",
+          class: "ck-heading_heading3",
         },
       ],
     },
