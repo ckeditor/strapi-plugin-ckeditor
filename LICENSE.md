@@ -1,7 +1,7 @@
 Software License Agreement
 ==========================
 
-Copyright (c) 2022, [CKSource Holding sp. z o.o.](http://cksource.com) All rights reserved.
+Copyright (c) 2022-2024, [CKSource Holding sp. z o.o.](http://cksource.com) All rights reserved.
 
 Inspired by https://github.com/nshenderov/strapi-plugin-ckeditor, copyright nshenderov.
 
