@@ -1,29 +1,29 @@
-import ckeditor5Dll from "ckeditor5/build/ckeditor5-dll.js";
+import "ckeditor5/build/ckeditor5-dll.js";
 
-import ckeditor5AlignmentDll from "@ckeditor/ckeditor5-alignment/build/alignment.js";
-import ckeditor5AutoformatDll from "@ckeditor/ckeditor5-autoformat/build/autoformat.js";
-import ckeditor5BasicStylesDll from "@ckeditor/ckeditor5-basic-styles/build/basic-styles.js";
-import ckeditor5BlockQuoteDll from "@ckeditor/ckeditor5-block-quote/build/block-quote.js";
-import ckeditor5CodeBlockDll from "@ckeditor/ckeditor5-code-block/build/code-block.js";
-import ckeditor5EssentialsDll from "@ckeditor/ckeditor5-essentials/build/essentials.js";
-import ckeditor5FontDll from "@ckeditor/ckeditor5-font/build/font.js";
-import ckeditor5HeadingDll from "@ckeditor/ckeditor5-heading/build/heading.js";
-import ckeditor5HighlightDll from '@ckeditor/ckeditor5-highlight/build/highlight.js';
-import ckeditor5HtmlEmbedDll from "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
-import ckeditor5HorizontalLineDll from "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
-import ckeditor5MarkdownDll from '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
-import ckeditor5MediaEmbedDll from "@ckeditor/ckeditor5-media-embed/build/media-embed.js";
-import ckeditor5ImageDll from "@ckeditor/ckeditor5-image/build/image.js";
-import ckeditor5IndentDll from "@ckeditor/ckeditor5-indent/build/indent.js";
-import ckeditor5LinkDll from "@ckeditor/ckeditor5-link/build/link.js";
-import ckeditor5ListDll from "@ckeditor/ckeditor5-list/build/list.js";
-import ckeditor5PasteFromOfficeDll from "@ckeditor/ckeditor5-paste-from-office/build/paste-from-office.js";
-import ckeditor5FindAndReplaceDll from "@ckeditor/ckeditor5-find-and-replace/build/find-and-replace.js";
-import ckeditor5RemoveFormatDll from "@ckeditor/ckeditor5-remove-format/build/remove-format.js";
-import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-characters/build/special-characters.js";
-import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
-import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
-import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
+import "@ckeditor/ckeditor5-alignment/build/alignment.js";
+import "@ckeditor/ckeditor5-autoformat/build/autoformat.js";
+import "@ckeditor/ckeditor5-basic-styles/build/basic-styles.js";
+import "@ckeditor/ckeditor5-block-quote/build/block-quote.js";
+import "@ckeditor/ckeditor5-code-block/build/code-block.js";
+import "@ckeditor/ckeditor5-essentials/build/essentials.js";
+import "@ckeditor/ckeditor5-font/build/font.js";
+import "@ckeditor/ckeditor5-heading/build/heading.js";
+import '@ckeditor/ckeditor5-highlight/build/highlight.js';
+import "@ckeditor/ckeditor5-html-embed/build/html-embed.js";
+import "@ckeditor/ckeditor5-horizontal-line/build/horizontal-line.js";
+import '@ckeditor/ckeditor5-markdown-gfm/build/markdown-gfm';
+import "@ckeditor/ckeditor5-media-embed/build/media-embed.js";
+import "@ckeditor/ckeditor5-image/build/image.js";
+import "@ckeditor/ckeditor5-indent/build/indent.js";
+import "@ckeditor/ckeditor5-link/build/link.js";
+import "@ckeditor/ckeditor5-list/build/list.js";
+import "@ckeditor/ckeditor5-paste-from-office/build/paste-from-office.js";
+import "@ckeditor/ckeditor5-find-and-replace/build/find-and-replace.js";
+import "@ckeditor/ckeditor5-remove-format/build/remove-format.js";
+import "@ckeditor/ckeditor5-special-characters/build/special-characters.js";
+import "@ckeditor/ckeditor5-table/build/table.js";
+import "@ckeditor/ckeditor5-word-count/build/word-count.js";
+import "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
@@ -230,7 +230,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'alignment',
         '|',
-        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
+        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent',
       ],
       shouldNotGroupWhenFull: true
     },
