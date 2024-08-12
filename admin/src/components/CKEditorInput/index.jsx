@@ -25,7 +25,8 @@ const CKEditorInput = ({
   labelAction = null,
   required = false,
   description = null,
-  error = null
+  error = null,
+  intlLabel
 }) => {
   const { onChange, value } = useField( name );
   const [ editorInstance, setEditorInstance ] = useState(false);
@@ -69,7 +70,7 @@ const CKEditorInput = ({
     >
       <Flex spacing={ 1 } alignItems="normal" style={ { 'flexDirection': 'column' } }>
         <Field.Label action={ labelAction } required={ required }>
-          { formatMessage( { id: 'ckeditor.label', defaultMessage: 'CKEditor' } ) }
+          { intlLabel ? formatMessage( intlLabel ) : name }
         </Field.Label>
         <GlobalStyling />
         <CKEditor
@@ -110,15 +111,13 @@ const CKEditorInput = ({
 };
 
 CKEditorInput.propTypes = {
-  intlLabel: PropTypes.object,
   attribute: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.object,
   disabled: PropTypes.bool,
   error: PropTypes.string,
   labelAction: PropTypes.object,
-  required: PropTypes.bool,
-  value: PropTypes.string,
+  required: PropTypes.bool
 };
 
 export default CKEditorInput;
