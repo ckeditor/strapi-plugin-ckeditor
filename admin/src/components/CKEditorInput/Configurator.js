@@ -130,6 +130,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.pasteFromOffice.PasteFromOffice,
       window.CKEditor5.table.Table,
       window.CKEditor5.table.TableToolbar,
+      window.CKEditor5.table.TableProperties,
+      window.CKEditor5.table.TableCellProperties,
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
@@ -187,6 +189,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'tableColumn',
         'tableRow',
         'mergeTableCells',
+        '|',
+        'tableCellProperties',
+        'tableProperties',
         '|',
         'toggleTableCaption'
       ]
