@@ -13,6 +13,21 @@ const IconBox = styled( Flex )`
   }
 `;
 
+if ( !document.querySelector( '#ckeditor5-cdn-script' ) ) {
+  const script = document.createElement( 'script' );
+  const link = document.createElement( 'link' );
+
+  script.src = "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.umd.js";
+  script.id = 'ckeditor5-cdn-script'
+
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css';
+  link.id = 'ckeditor5-cdn-styles';
+
+  document.head.appendChild( script );
+  document.head.appendChild( link );
+}
+
 export default {
   register( app ) {
     app.customFields.register( {

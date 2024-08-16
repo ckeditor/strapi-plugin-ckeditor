@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Flex } from '@strapi/design-system';
 import { Field } from '@strapi/design-system';
@@ -9,8 +9,8 @@ import Configurator from './Configurator';
 import MediaLib from '../MediaLib';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import 'ckeditor5/build/ckeditor5-dll.js';
-import '@ckeditor/ckeditor5-editor-classic/build/editor-classic.js';
+
+const { ClassicEditor } = window.CKEDITOR;
 
 import sanitize from './utils/utils';
 import { useField } from '@strapi/strapi/admin';
@@ -74,7 +74,7 @@ const CKEditorInput = ({
         </Field.Label>
         <GlobalStyling />
         <CKEditor
-          editor={ window.CKEditor5.editorClassic.ClassicEditor }
+          editor={ ClassicEditor }
           disabled={ disabled }
           data={ value }
           onReady={ ( editor ) => {
