@@ -26,6 +26,73 @@ import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-cou
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
+const customColorPalette = [
+  {
+    color: '#0aa745',
+    label: 'Green'
+  },
+  {
+    color: '#a2f4aa',
+    label: 'Green light'
+  },
+  {
+    color: '#339be4',
+    label: 'Blue'
+  },
+  {
+    color: '#cbe6ff',
+    label: 'Blue light'
+  },
+  {
+    color: '#189176',
+    label: 'Ice'
+  },
+  {
+    color: '#7DD9A4',
+    label: 'Ice light'
+  },
+  {
+    color: '#F1535A',
+    label: 'Red'
+  },
+  {
+    color: '#FED5D8',
+    label: 'Red Light'
+  },
+  {
+    color: '#B463D2',
+    label: 'Purple'
+  },
+  {
+    color: '#F3E9F7',
+    label: 'Purple Light'
+  },
+  {
+    color: '#C5BEA3',
+    label: 'Sand'
+  },
+  {
+    color: '#F2F0EA',
+    label: 'Sand Light'
+  },
+  {
+    color: '#FDA92A',
+    label: 'Orange'
+  },
+  {
+    color: '#FFECC6',
+    label: 'Orange Light'
+  },
+  {
+    color: '#CAB650',
+    label: 'Padel'
+  },
+  {
+    color: '#FEF364',
+    label: 'Padel Light'
+  }
+];
+
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
     plugins: [
@@ -194,7 +261,15 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'tableProperties',
         '|',
         'toggleTableCaption'
-      ]
+      ],
+      tableProperties: {
+        borderColors: customColorPalette,
+        backgroundColors: customColorPalette
+      },
+      tableCellProperties: {
+        borderColors: customColorPalette,
+        backgroundColors: customColorPalette
+      }
     },
   },
 
@@ -330,7 +405,15 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'tableProperties',
         '|',
         'toggleTableCaption'
-      ]
+      ],
+      tableProperties: {
+        borderColors: customColorPalette,
+        backgroundColors: customColorPalette
+      },
+      tableCellProperties: {
+        borderColors: customColorPalette,
+        backgroundColors: customColorPalette
+      }
     },
     fontSize: {
       options: [
