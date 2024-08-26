@@ -2,6 +2,9 @@
 
 <img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
 
+> [!IMPORTANT]  
+> Since version 1.0.0, the plugin can be used only with Strapi 5. If you still use Strapi 4.4+, you should stick to the package version 0.0.x. See the [compatibility section](#compatibility) to learn more.
+
 This package provides a custom field for Strapi that lets you use and configure CKEditor in no time.
 
 Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
@@ -43,6 +46,25 @@ or:
 
 ```bash
 yarn build
+```
+
+Finally, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin, by adding the rule to `config/middlewares.ts` in your Strapi project root:
+
+```js
+export default [
+  // ...
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'script-src': ['https://cdn.ckeditor.com']
+        },
+      },
+    },
+  },
+  // ...
 ```
 
 ## <a id="contributing"></a>🛠 Contributing
@@ -100,3 +122,38 @@ Rebuild the project and start the server:
 yarn build
 yarn develop
 ```
+
+## <a id="compatibility"></a>🧩 Compatibility with Strapi versions
+
+Starting from version 1.0.0, the CKEditor 5 custom field plugin is compatible with Strapi 5 and can't be used in Strapi 4.4+. We decided to maintain integrations for both Strapi versions to make sure that you still be able to use our custom field before migrating to Strapi 5. Below, you can find the compatibility table that shows which plugin version should be used with your Strapi version.
+
+ <table>
+    <thead>
+        <tr>
+            <th>
+                Plugin version
+            </th>
+            <th>
+                Strapi version
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                1.0.0+
+            </td>
+            <td>
+                ≥ 5.0.0
+            </td>
+        </tr>
+        <tr>
+            <td>
+                0.0.x
+            </td>
+            <td>
+                ≥ 4.4
+            </td>
+        </tr>
+    </tbody>
+</table>
