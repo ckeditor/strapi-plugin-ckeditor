@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { Flex } from '@strapi/design-system';
 import { Field } from '@strapi/design-system';
