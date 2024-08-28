@@ -5,7 +5,7 @@
 > [!IMPORTANT]  
 > Since version 1.0.0, the plugin can be used only with Strapi 5. If you still use Strapi 4.4+, you should stick to the package version 0.0.x. See the [compatibility section](#compatibility) to learn more.
 
-This package provides a custom field for Strapi that lets you use and configure CKEditor in no time.
+This package provides a custom field for Strapi 5 that lets you use and configure CKEditor in no time.
 
 Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
 
