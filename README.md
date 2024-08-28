@@ -36,19 +36,7 @@ With `yarn`:
 yarn add @ckeditor/strapi-plugin-ckeditor
 ```
 
-Then run build:
-
-```bash
-npm run build
-```
-
-or:
-
-```bash
-yarn build
-```
-
-Finally, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin, by adding the rule to `config/middlewares.ts` in your Strapi project root:
+Then, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin, by adding the rule to `config/middlewares.ts` in your Strapi project root:
 
 ```js
 export default [
@@ -65,6 +53,18 @@ export default [
     },
   },
   // ...
+```
+
+Finally run build:
+
+```bash
+npm run build
+```
+
+or:
+
+```bash
+yarn build
 ```
 
 ## <a id="contributing"></a>🛠 Contributing
