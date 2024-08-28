@@ -1,5 +1,7 @@
-// import "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
+
+import "../../vendor/ckeditor5-maximum-length/index.umd";
+import "../../vendor/ckeditor5-maximum-length/index-editor.css";
 
 const {
   Alignment,
@@ -50,6 +52,8 @@ const {
   WordCount,
   Highlight
 } = window.CKEDITOR;
+
+const { MaximumLength } = window.MaximumLength;
 
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
@@ -374,13 +378,13 @@ export default class Configurator {
       config.plugins.push( Markdown );
     }
 
-    // if ( maxLength ) {
-    //   config.plugins.push( MaximumLength );
+    if ( maxLength ) {
+      config.plugins.push( MaximumLength );
 
-    //   config.maximumLength = {
-    //     characters: maxLength
-    //   };
-    // }
+      config.maximumLength = {
+        characters: maxLength
+      };
+    }
 
     return config;
   }
