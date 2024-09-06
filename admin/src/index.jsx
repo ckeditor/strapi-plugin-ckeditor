@@ -13,6 +13,9 @@ const IconBox = styled( Flex )`
   }
 `;
 
+// Inject CKEditor 5 and stylesheet from CDN
+injectAssetsFromCDN();
+
 export default {
   register( app ) {
     app.customFields.register( {
@@ -35,12 +38,7 @@ export default {
         defaultMessage: 'The rich text editor for every use case'
       },
       components: {
-        Input: async () => {
-          // Inject CKEditor 5 and stylesheet from CDN
-          injectAssetsFromCDN();
-
-          return import( './components/CKEditorInput' )
-        }
+        Input: async () => await import( './components/CKEditorInput' )
       },
       options: {
         base: [
