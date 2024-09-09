@@ -68,7 +68,6 @@ export const style = css`
     }
 
     .table {
-      margin: 0;
       font-size: 1.6rem;
     }
 
