@@ -1,9 +1,9 @@
-# CKEditor 5 custom field for Strapi
+# CKEditor 5 - Official Integration for Strapi
 
 <img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
 
 > [!IMPORTANT]  
-> Since version 1.0.0, the plugin can be used only with Strapi 5. If you still use Strapi 4.4+, you should stick to the package version 0.0.x. See the [compatibility section](#compatibility) to learn more.
+> Since version 1.0.0, the plugin can be used only with Strapi 5. If you still use Strapi 4.4+, you should stick to the package version 0.x.x. See the [compatibility section](#compatibility) to learn more.
 
 This package provides a custom field for Strapi 5 that lets you use and configure CKEditor in no time.
 
@@ -141,7 +141,7 @@ Starting from version 1.0.0, the CKEditor 5 custom field plugin is compatible wi
     <tbody>
         <tr>
             <td>
-                1.0.0+
+                1.x.x
             </td>
             <td>
                 ≥ 5.0.0
@@ -149,7 +149,7 @@ Starting from version 1.0.0, the CKEditor 5 custom field plugin is compatible wi
         </tr>
         <tr>
             <td>
-                0.0.x
+                0.x.x
             </td>
             <td>
                 ≥ 4.4
@@ -157,3 +157,7 @@ Starting from version 1.0.0, the CKEditor 5 custom field plugin is compatible wi
         </tr>
     </tbody>
 </table>
+
+## <a id="licensing"></a>⚖️ Licensing
+
+The plugin "CKEditor 5 - Official Integration for Strapi" is licensed under MIT. Please note that [CKEditor 5 itself is licensed under GPL v2+](https://ckeditor.com/legal/ckeditor-oss-license/?utm_campaign=strapi-integration&utm_source=ck-github&utm_medium=referral) or a [commercial license](https://ckeditor.com/pricing/?utm_campaign=strapi-integration&utm_source=ck-github&utm_medium=referral).
