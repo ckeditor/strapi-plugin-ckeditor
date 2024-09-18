@@ -9,8 +9,8 @@ import Configurator from './Configurator';
 import MediaLib from '../MediaLib';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ckeditor5Dll from 'ckeditor5/build/ckeditor5-dll.js';
-import ckeditor5EditorClassicDll from '@ckeditor/ckeditor5-editor-classic/build/editor-classic.js';
+
+const { ClassicEditor } = window.CKEDITOR;
 
 import sanitize from './utils/utils';
 
@@ -74,7 +74,7 @@ const CKEditorInput = ({
         </FieldLabel>
         <GlobalStyling />
         <CKEditor
-          editor={ window.CKEditor5.editorClassic.ClassicEditor }
+          editor={ ClassicEditor }
           disabled={ disabled }
           data={ value }
           onReady={ ( editor ) => {
