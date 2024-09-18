@@ -37,6 +37,7 @@ const {
   List,
   ListProperties,
   TodoList,
+  Markdown,
   MediaEmbed,
   Paragraph,
   PasteFromOffice,
