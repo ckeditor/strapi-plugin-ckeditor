@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/156149/192792402-4bb1e040-6f8c-49be-af90-fd35fd3a4c66.png" alt="CKEditor 5 used inside Strapi. Article form consisting of a title, excerpt text, and content">
 
 > [!IMPORTANT]  
-> Since version 1.0.0, the plugin can be used only with Strapi 5. If you still use Strapi 4.4+, you should stick to the package version 0.x.x. See the [compatibility section](#compatibility) to learn more.
+> Starting from version 1.0.0, the CKEditor 5 custom field plugin is compatible with Strapi 5 and can’t be used in Strapi 4.4+. We decided to maintain integrations for both Strapi versions to ensure that you can still use our custom field before migrating to Strapi 5. Below is the [compatibility table](#compatibility) showing which plugin version should be used with your Strapi version.
 
 This package provides a custom field for Strapi 5 that lets you use and configure CKEditor in no time.
 
