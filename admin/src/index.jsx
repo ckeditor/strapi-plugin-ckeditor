@@ -13,9 +13,6 @@ const IconBox = styled( Flex )`
   }
 `;
 
-// Inject CKEditor 5 and stylesheet from CDN
-injectAssetsFromCDN();
-
 export default {
   register( app ) {
     app.customFields.register( {
@@ -38,7 +35,7 @@ export default {
         defaultMessage: 'The rich text editor for every use case'
       },
       components: {
-        Input: async () => await import( './components/CKEditorInput' )
+        Input: async () => await import( './components/CKEditorProvider' )
       },
       options: {
         base: [
@@ -184,21 +181,3 @@ export default {
     return Promise.resolve( importedTrads );
   },
 };
-
-function injectAssetsFromCDN() {
-  if ( !document.querySelector( '#ckeditor5-cdn-script' ) ) {
-    const script = document.createElement( 'script' );
-    const link = document.createElement( 'link' );
-
-    script.src = "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.umd.js";
-    script.async = true;
-    script.id = 'ckeditor5-cdn-script'
-
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css';
-    link.id = 'ckeditor5-cdn-styles';
-
-    document.body.appendChild( script );
-    document.head.appendChild( link );
-  }
-}

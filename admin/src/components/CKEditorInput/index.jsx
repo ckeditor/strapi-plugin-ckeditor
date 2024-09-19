@@ -18,16 +18,16 @@ import { useField } from '@strapi/strapi/admin';
 const strapiTheme = localStorage.getItem( 'STRAPI_THEME' ) || 'light';
 const GlobalStyling = getGlobalStyling( strapiTheme );
 
-const CKEditorInput = ({
-  attribute,
-  name,
-  disabled = false,
-  labelAction = null,
-  required = false,
-  description = null,
-  error = null,
-  intlLabel
-}) => {
+const CKEditorInput = ( props ) => {
+  const {
+    attribute,
+    name,
+    disabled,
+    labelAction,
+    required,
+    description,
+    error,
+    intlLabel } = props;
   const { onChange, value } = useField( name );
   const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
