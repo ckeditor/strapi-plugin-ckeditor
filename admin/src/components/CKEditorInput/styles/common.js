@@ -6,7 +6,7 @@ export const style = css`
     gap: 0.5rem;
     justify-content: flex-end;
     padding-block: 0.2rem;
-    font-size: 0.875rem;
+    font-size: 1.4rem;
   }
 
   .ck-editor__main {
@@ -20,31 +20,31 @@ export const style = css`
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 3.2rem;
       margin-bottom: 0.6em;
       font-weight: 400;
     }
 
     h2 {
-      font-size: 1.68em;
+      font-size: 2.688rem;
       margin-bottom: 0.4em;
       font-weight: 400;
     }
 
     h3 {
-      font-size: 1.36em;
+      font-size: 2.176rem;
       margin-bottom: 0.2em;
       font-weight: 400;
     }
 
     h4 {
-      font-size: 1.15em;
+      font-size: 1.84rem;
       margin-bottom: 0.1em;
       font-weight: 400;
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.6rem;
       line-height: 1.6em;
       margin-bottom: 0.8em;
     }
@@ -54,17 +54,25 @@ export const style = css`
       caption-side: bottom;
       color: var(--ck-color-image-caption-text);
       display: table-caption;
-      font-size: .75em;
+      font-size: 1.2rem;
       outline-offset: -1px;
       padding: 0.6em;
       word-break: break-word;
+    }
+
+    .image figcaption {
+      font-size: 1.2rem;
     }
 
     blockquote {
     }
 
     .table {
-      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    code {
+      font-size: 1.4rem;
     }
 
     ul.todo-list {
@@ -77,6 +85,7 @@ export const style = css`
 
     ul,
     ol {
+      font-size: 1.6rem;
       list-style: initial;
       margin-left: 2rem;
     }

@@ -1,6 +1,6 @@
 'use strict';
 
-const register = require('./register');
+const register = require( './register' );
 
 module.exports = {
   register,
