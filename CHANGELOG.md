@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.1 (September 19, 2024)
+
+### Release highlights
+
+This is a patch release that resolves an issue that resulted in the Strapi app building process failure.
+
+Check out the highlights of the original v1.0.0 release.
+
+### Bug fixes
+* Switch the `ckeditor5-maximum-length` plugin from UMD build to JS.
+
 ## 1.0.0 (September 19, 2024)
 
 We are happy to announce the release of CKEditor 5 Official Integration v1.0.0.

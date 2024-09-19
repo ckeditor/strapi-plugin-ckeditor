@@ -1,6 +1,6 @@
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
-import "../../vendor/ckeditor5-maximum-length/index.umd";
+import MaximumLength from "../../vendor/ckeditor5-maximum-length/index";
 import "../../vendor/ckeditor5-maximum-length/index-editor.css";
 
 const {
@@ -53,8 +53,6 @@ const {
   WordCount,
   Highlight
 } = window.CKEDITOR;
-
-const { MaximumLength } = window.MaximumLength;
 
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
   light: {
