@@ -14,18 +14,19 @@ const { ClassicEditor } = window.CKEDITOR;
 
 import sanitize from './utils/utils';
 
-const CKEditorInput = ({
-  attribute,
-  onChange,
-  name,
-  value,
-  disabled,
-  labelAction,
-  intlLabel,
-  required,
-  description,
-  error
-}) => {
+const CKEditorInput = ( props ) => {
+  const {
+    attribute,
+    onChange,
+    name,
+    value,
+    disabled,
+    labelAction,
+    intlLabel,
+    required,
+    description,
+    error
+  } = props;
   const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
   const { maxLengthCharacters:maxLength , ...options } = attribute.options;
