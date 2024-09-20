@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.2 (September 20, 2024)
+
+### Release highlights
+
+This is a patch release that resolves an issue that resulted in a crash after removing the content from the editor. The issue was caused by the fact that after releasing Strapi 5.0.0, the custom field's `value` property becomes `null` when the editor is empty.
+
+Check out the highlights of the original v1.0.0 release.
+
+### Bug fixes
+* Prevent passing `null` as the editor data to prevent the crash.
+
 ## 1.0.1 (September 19, 2024)
 
 ### Release highlights

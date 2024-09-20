@@ -76,7 +76,7 @@ const CKEditorInput = ( props ) => {
         <CKEditor
           editor={ ClassicEditor }
           disabled={ disabled }
-          data={ value }
+          data={ value ?? '' }
           onReady={ ( editor ) => {
             const wordCountPlugin = editor.plugins.get( 'WordCount' );
             const wordCountWrapper = wordCounter.current;
@@ -89,7 +89,6 @@ const CKEditorInput = ( props ) => {
           }}
           onChange={ ( event, editor ) => {
             const data = editor.getData();
-
             onChange( { target: { name, value: data } } );
 
             const wordCountPlugin = editor.plugins.get( 'WordCount' );
