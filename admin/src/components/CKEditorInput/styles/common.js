@@ -122,6 +122,7 @@ export const style = css`
     
     .ck-source-editing-area textarea {
       font-size: 1.2rem;
+      overflow: auto;
     }
   }
 `;
