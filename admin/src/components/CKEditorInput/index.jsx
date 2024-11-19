@@ -30,7 +30,6 @@ const CKEditorInput = ( props ) => {
     intlLabel } = props;
   const { onChange, value } = useField( name );
   const [ editorInstance, setEditorInstance ] = useState(false);
-  const { formatMessage } = useIntl();
   const { maxLengthCharacters:maxLength , ...options } = attribute.options;
   const configurator = new Configurator( { options, maxLength } );
   const editorConfig = configurator.getEditorConfig();
@@ -64,13 +63,12 @@ const CKEditorInput = ( props ) => {
     <Field.Root
       name= {name }
       id={ name }
-      // GenericInput calls formatMessage and returns a string for the error
       error={ error }
-      hint={ description && formatMessage( description ) }
+      hint={ description }
     >
       <Flex spacing={ 1 } alignItems="normal" style={ { 'flexDirection': 'column' } }>
         <Field.Label action={ labelAction } required={ required }>
-          { intlLabel ? formatMessage( intlLabel ) : name }
+          { intlLabel ?? name }
         </Field.Label>
         <GlobalStyling />
         <CKEditor
