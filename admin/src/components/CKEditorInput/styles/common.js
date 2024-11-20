@@ -119,6 +119,9 @@ export const style = css`
         transition-duration: 0.2s;
       }
     }
+    .ck-source-editing-area {
+      height: 150px;
+    }
     .ck-source-editing-area textarea {
       font-size: 1.2rem;
       overflow: auto;
