@@ -1,7 +1,7 @@
 {
-  "name": "@ckeditor/strapi-plugin-ckeditor",
+  "name": "@kostaszazim/strapi-plugin-ckeditor",
   "version": "1.0.2",
-  "description": "CKEditor 5 - Official Integration for Strapi",
+  "description": "CKEditor 5 - Official Integration for Strapi, including label fixes and source editing",
   "strapi": {
     "name": "ckeditor",
     "description": "The rich text editor for every use case",
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "https://github.com/ckeditor/strapi-plugin-ckeditor.git"
   },
-  "author": "CKSource (http://cksource.com/)",
+  "author": "CKSource (http://cksource.com/), kostas_zazim@yahoo.gr",
   "homepage": "https://market.strapi.io/plugins/@ckeditor-strapi-plugin-ckeditor",
   "engines": {
     "npm": ">=6.0.0"

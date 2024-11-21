@@ -7,6 +7,8 @@ const CKEditorProvider = ( {
   labelAction = null,
   required = false,
   description = null,
+  hint = null,
+  label = null,
   error = null,
   intlLabel } ) => {
   const [ importedEditor, setImportedEditor ] = useState( null );
@@ -22,9 +24,9 @@ const CKEditorProvider = ( {
         disabled={ disabled }
         labelAction={ labelAction }
         required={ required }
-        description={ description }
+        description={ hint }
         error={ error }
-        intlLabel={ intlLabel }
+        intlLabel={ label }
         /> );
     };
 
