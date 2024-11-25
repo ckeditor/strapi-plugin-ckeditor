@@ -31,8 +31,8 @@ const CKEditorInput = ( props ) => {
   const { onChange, value } = useField( name );
   const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
-  const { maxLengthCharacters:maxLength , ...options } = attribute.options;
-  const configurator = new Configurator( { options, maxLength } );
+  const { maxLengthCharacters:maxLength, licenseKey, ...options } = attribute.options;
+  const configurator = new Configurator( { options, maxLength, licenseKey } );
   const editorConfig = configurator.getEditorConfig();
 
   const wordCounter = useRef( null );

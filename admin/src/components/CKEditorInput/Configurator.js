@@ -412,6 +412,9 @@ export default class Configurator {
 
     const maxLength = this.fieldConfig.maxLength;
     const outputOption = this.fieldConfig.options.output;
+    const licenseKey = this.fieldConfig.licenseKey;
+
+    config.licenseKey = licenseKey;
 
     if ( outputOption === 'Markdown' ) {
       config.plugins.push( Markdown );
