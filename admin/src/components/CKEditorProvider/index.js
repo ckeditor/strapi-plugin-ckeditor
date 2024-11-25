@@ -3,15 +3,17 @@ import { useCKEditorCloud } from '@ckeditor/ckeditor5-react';
 
 const CKEditorProvider = ( {
   attribute,
+  onChange,
   name,
+  value,
   disabled = false,
   labelAction = null,
+  intlLabel,
   required = false,
   description = null,
-  error = null,
-  intlLabel } ) => {
+  error = null } ) => {
   const cloud = useCKEditorCloud( {
-    version: '43.0.0',
+    version: 'nightly',
     plugins: {
       CKEditorInput: async () => ( await import('../CKEditorInput') ).CKEditorInput
     }
@@ -24,7 +26,9 @@ const CKEditorProvider = ( {
   return (
     <cloud.loadedPlugins.CKEditorInput
       attribute={ attribute }
+      onChange={ onChange }
       name={ name }
+      value={ value }
       disabled={ disabled }
       labelAction={ labelAction }
       required={ required }
