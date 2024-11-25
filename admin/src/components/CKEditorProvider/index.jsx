@@ -11,7 +11,7 @@ const CKEditorProvider = ( {
   error = null,
   intlLabel } ) => {
   const cloud = useCKEditorCloud( {
-    version: '43.0.0',
+    version: 'nightly',
     plugins: {
       CKEditorInput: async () => ( await import('../CKEditorInput') ).CKEditorInput
     }
