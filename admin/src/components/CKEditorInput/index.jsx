@@ -119,4 +119,4 @@ CKEditorInput.propTypes = {
   required: PropTypes.bool
 };
 
-export default CKEditorInput;
+export { CKEditorInput };

@@ -1,4 +1,5 @@
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
+import { StrapiEditorUsageDataPlugin } from "./plugins/StrapiEditorUsageData";
 
 import MaximumLength from "../../vendor/ckeditor5-maximum-length/index";
 import "../../vendor/ckeditor5-maximum-length/index-editor.css";
@@ -77,7 +78,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       TableColumnResize,
       TableCaption,
       WordCount,
-      StrapiMediaLib
+      StrapiMediaLib,
+      StrapiEditorUsageDataPlugin
     ],
     toolbar: [
       'undo', 'redo',
@@ -158,7 +160,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       TableColumnResize,
       TableCaption,
       WordCount,
-      StrapiMediaLib
+      StrapiMediaLib,
+      StrapiEditorUsageDataPlugin
     ],
     toolbar: [
         'undo', 'redo',
@@ -264,7 +267,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       TableCaption,
       WordCount,
       Highlight,
-      StrapiMediaLib
+      StrapiMediaLib,
+      StrapiEditorUsageDataPlugin
     ],
     toolbar: {
       items: [

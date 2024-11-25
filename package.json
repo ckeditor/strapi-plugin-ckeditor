@@ -37,6 +37,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@ckeditor/ckeditor5-react": "^9.1.0"
+    "@ckeditor/ckeditor5-react": "^9.3.0"
   }
 }
