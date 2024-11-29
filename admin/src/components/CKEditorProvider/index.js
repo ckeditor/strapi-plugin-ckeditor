@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useCKEditorCloud } from '@ckeditor/ckeditor5-react';
 
 const CKEditorProvider = ( {
@@ -12,6 +12,18 @@ const CKEditorProvider = ( {
   required = false,
   description = null,
   error = null } ) => {
+
+  // Clean up CDN scripts after unmounting the component.
+  useEffect( () => {
+    return () => {
+      const assets = document.querySelectorAll( '[data-injected-by="ckeditor-integration"]' );
+
+      assets.forEach( asset => asset.remove() );
+
+      window.CKEDITOR_VERSION = null;
+    }
+  }, [] )
+
   const cloud = useCKEditorCloud( {
     version: 'nightly',
     plugins: {
