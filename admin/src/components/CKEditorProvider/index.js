@@ -1,98 +1,54 @@
-import { useState, useEffect } from 'react';
+import { memo, useEffect } from 'react';
+import { useCKEditorCloud } from '@ckeditor/ckeditor5-react';
 
 const CKEditorProvider = ( {
-    attribute,
-    onChange,
-    name,
-    value,
-    disabled = false,
-    labelAction = null,
-    intlLabel,
-    required = false,
-    description = null,
-    error = null
-  } ) => {
-  const [ importedEditor, setImportedEditor ] = useState( null );
+  attribute,
+  onChange,
+  name,
+  value,
+  disabled = false,
+  labelAction = null,
+  intlLabel,
+  required = false,
+  description = null,
+  error = null } ) => {
 
+  // Clean up CDN scripts after unmounting the component.
   useEffect( () => {
-    const importEditor = async () => {
-      const module = await import( '../CKEditorInput' );
-      const CKEditorInput = module.default;
-
-      setImportedEditor(<CKEditorInput
-        attribute={ attribute }
-        onChange={ onChange }
-        name={ name }
-        value={ value }
-        disabled={ disabled }
-        labelAction={ labelAction }
-        required={ required }
-        description={ description }
-        error={ error }
-        intlLabel={ intlLabel }
-        /> );
-    };
-
-    const injectAssetsFromCDN = setInterval( () => {
-      const CDNScript = document.querySelector( '#ckeditor5-cdn-script' );
-      const CDNStyles = document.querySelector( '#ckeditor5-cdn-styles' );
-
-      if ( !CDNStyles ) {
-        _injectStylesFromCDN();
-      }
-
-      if ( window.CKEDITOR ) {
-        window.CKEditorCDNLoaded = true;
-
-        importEditor();
-
-        clearInterval( injectAssetsFromCDN );
-
-        return;
-      }
-
-      if ( !CDNScript ) {
-        _injectScriptFromCDN();
-
-      }
-    }, 100 )
-
     return () => {
-      const CDNScript = document.querySelector( '#ckeditor5-cdn-script' );
+      const assets = document.querySelectorAll( '[data-injected-by="ckeditor-integration"]' );
 
-      if ( CDNScript ) {
-        CDNScript.remove();
-      }
+      assets.forEach( asset => asset.remove() );
 
-      window.CKEditorCDNLoaded = false;
+      window.CKEDITOR_VERSION = null;
     }
-  }, [] );
+  }, [] )
+
+  const cloud = useCKEditorCloud( {
+    version: '44.0.0',
+    plugins: {
+      CKEditorInput: async () => ( await import('../CKEditorInput') ).CKEditorInput
+    }
+  } );
+
+  if ( cloud.status !== 'success' ) {
+    return null;
+  }
 
   return (
-    <>
-      { window.CKEditorCDNLoaded && importedEditor }
-    </>
+    <cloud.loadedPlugins.CKEditorInput
+      attribute={ attribute }
+      onChange={ onChange }
+      name={ name }
+      value={ value }
+      disabled={ disabled }
+      labelAction={ labelAction }
+      required={ required }
+      description={ description }
+      error={ error }
+      intlLabel={ intlLabel }
+    />
   )
 }
 
-function _injectStylesFromCDN() {
-  const link = document.createElement( 'link' );
-
-  link.rel = 'stylesheet';
-  link.href = 'https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css';
-  link.id = 'ckeditor5-cdn-styles';
-
-  document.head.appendChild( link );
-}
-
-function _injectScriptFromCDN() {
-  const script = document.createElement( 'script' );
-
-  script.src = "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.umd.js";
-  script.async = true;
-  script.id = 'ckeditor5-cdn-script'
-
-  document.body.appendChild( script );
-}
-
-export default CKEditorProvider;
+export default memo( CKEditorProvider );

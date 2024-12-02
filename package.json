@@ -1,6 +1,6 @@
 {
   "name": "@ckeditor/strapi-plugin-ckeditor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CKEditor 5 - Official Integration for Strapi.",
   "strapi": {
     "name": "ckeditor",
@@ -24,7 +24,7 @@
     "strapi-server.js"
   ],
   "dependencies": {
-    "@ckeditor/ckeditor5-react": "^9.1.0"
+    "@ckeditor/ckeditor5-react": "^9.3.0"
   },
   "peerDependencies": {
     "@strapi/strapi": "^4.4.0"
