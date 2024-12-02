@@ -1,6 +1,6 @@
 {
   "name": "@wgr-sa/strapi-plugin-ckeditor",
-  "version": "0.7.7",
+  "version": "0.7.10",
   "description": "CKEditor 5 custom field for Strapi.",
   "strapi": {
     "name": "ckeditor",
@@ -56,6 +56,7 @@
     "@ckeditor/ckeditor5-theme-lark": "^40.0.0",
     "@ckeditor/ckeditor5-upload": "^40.0.0",
     "@ckeditor/ckeditor5-word-count": "^40.0.0",
+    "@ckeditor/ckeditor5-bookmark": "^40.0.0",
     "@reinmar/ckeditor5-maximum-length": "^0.0.1",
     "ckeditor5": "^40.0.0"
   },

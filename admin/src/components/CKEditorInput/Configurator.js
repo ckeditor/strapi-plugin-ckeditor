@@ -24,6 +24,7 @@ import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-character
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
+import ckeditor5BookmarkDll from "@ckeditor/ckeditor5-bookmark/build/bookmark.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
 const customColorPalette = [
@@ -116,6 +117,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableColumnResize,
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
+      window.CKEditor5.bookmark.Bookmark,
       StrapiMediaLib
     ],
     toolbar: [
@@ -125,7 +127,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       '|',
       'bold', 'italic',
       '|',
-      'link', 'strapiMediaLib', 'insertTable',
+      'link', 'bookmark', 'strapiMediaLib', 'insertTable',
       '|',
       'bulletedList', 'numberedList'
     ],
@@ -203,6 +205,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
       window.CKEditor5.horizontalLine.HorizontalLine,
+      window.CKEditor5.bookmark.Bookmark,
       StrapiMediaLib
     ],
     mediaEmbed: { previewsInData: true } ,
@@ -213,7 +216,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'bold', 'italic',
         '|',
-        'link', 'strapiMediaLib', 'htmlEmbed', 'horizontalLine', 'blockQuote', 'insertTable', 'codeBlock',
+        'link', 'bookmark', 'strapiMediaLib', 'htmlEmbed', 'horizontalLine', 'blockQuote', 'insertTable', 'codeBlock',
         '|',
         'bulletedList', 'numberedList', 'outdent', 'indent'
     ],
@@ -322,6 +325,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
       window.CKEditor5.highlight.Highlight,
+      window.CKEditor5.bookmark.Bookmark,
       StrapiMediaLib
     ],
     mediaEmbed: { previewsInData: true } ,
@@ -337,7 +341,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat',
         '-',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
+        'link', 'bookmark', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
         '|',
         'alignment',
         '|',
