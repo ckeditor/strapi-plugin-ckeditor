@@ -23,7 +23,7 @@ This is an official plugin, provided to you by the [CKEditor team](https://ckedi
 ## <a id="installation"></a>🔧 Installation
 
 > [!IMPORTANT]  
-> Before installation, make sure that you own a **valid CKEditor 5 license key**. To get a free or paid license, visit https://portal.ckeditor.com/checkout?plan=free. You can read more about the license keys [in our documentation](https://ckeditor.com/docs/ckeditor5/latest/getting-started/licensing/license-key-and-activation.html).
+> Before installation, make sure that you own a **valid CKEditor 5 license key**. Start a [commitment-free trial](https://portal.ckeditor.com/checkout?plan=free) to get instant access to the license key. You can also refer to our [license key and activation guide](https://ckeditor.com/docs//ckeditor5/latest/getting-started/licensing/license-key-and-activation.html) to learn more.
 
 Inside your Strapi app, add the package:
 
