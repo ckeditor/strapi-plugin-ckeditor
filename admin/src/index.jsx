@@ -41,6 +41,18 @@ export default {
         base: [
           {
             intlLabel: {
+              id: 'ckeditor.licenseKey.label',
+              defaultMessage: 'License key',
+            },
+            description: {
+              id: 'ckeditor.licenseKey.description',
+              defaultMessage: "Don't have a license key? Visit https://portal.ckeditor.com/checkout?plan=free to receive it.",
+            },
+            name: 'options.licenseKey',
+            type: 'text',
+          },
+          {
+            intlLabel: {
               id: 'ckeditor.preset.label',
               defaultMessage: 'Choose editor version',
             },
@@ -154,6 +166,10 @@ export default {
           preset: yup.string().required( {
             id: 'ckeditor.preset.error.required',
             defaultMessage: 'Editor preset is required',
+          } ),
+          licenseKey: yup.string().required( {
+            id: 'ckeditor.licenseKey.error.required',
+            defaultMessage: 'Editor license key is required. Visit https://portal.ckeditor.com/checkout?plan=free to receive it.',
           } ),
         } ),
       },

@@ -22,6 +22,9 @@ This is an official plugin, provided to you by the [CKEditor team](https://ckedi
 
 ## <a id="installation"></a>🔧 Installation
 
+> [!IMPORTANT]  
+> Before installation, make sure that you own a **valid CKEditor 5 license key**. Start a [commitment-free trial](https://portal.ckeditor.com/checkout?plan=free) to get instant access to the license key. You can also refer to our [license key and activation guide](https://ckeditor.com/docs//ckeditor5/latest/getting-started/licensing/license-key-and-activation.html) to learn more.
+
 Inside your Strapi app, add the package:
 
 With `npm`:
@@ -36,7 +39,7 @@ With `yarn`:
 yarn add @ckeditor/strapi-plugin-ckeditor
 ```
 
-Then, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin, by adding the rule to `config/middlewares.ts` in your Strapi project root:
+Then, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin and sending the editor usage information to https://proxy-event.ckeditor.com, by adding the rule to `config/middlewares.ts` in your Strapi project root:
 
 ```js
 export default [
@@ -47,7 +50,8 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'script-src': ['https://cdn.ckeditor.com']
+          'script-src': ['https://cdn.ckeditor.com'],
+          'connect-src': ['https://proxy-event.ckeditor.com']
         },
       },
     },
