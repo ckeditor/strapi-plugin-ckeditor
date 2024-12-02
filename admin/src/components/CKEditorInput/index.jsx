@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
-import { Stack } from '@strapi/design-system/Stack';
-import { Field, FieldHint, FieldError, FieldLabel } from '@strapi/design-system/Field';
+import { Flex } from '@strapi/design-system';
+import { Field } from '@strapi/design-system';
 import PropTypes from "prop-types";
 
 import { getGlobalStyling } from './GlobalStyling';
@@ -9,23 +9,26 @@ import Configurator from './Configurator';
 import MediaLib from '../MediaLib';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ckeditor5Dll from 'ckeditor5/build/ckeditor5-dll.js';
-import ckeditor5EditorClassicDll from '@ckeditor/ckeditor5-editor-classic/build/editor-classic.js';
+
+const { ClassicEditor } = window.CKEDITOR;
 
 import sanitize from './utils/utils';
+import { useField } from '@strapi/strapi/admin';
 
-const CKEditorInput = ({
-  attribute,
-  onChange,
-  name,
-  value,
-  disabled,
-  labelAction,
-  intlLabel,
-  required,
-  description,
-  error
-}) => {
+const strapiTheme = localStorage.getItem( 'STRAPI_THEME' ) || 'light';
+const GlobalStyling = getGlobalStyling( strapiTheme );
+
+const CKEditorInput = ( props ) => {
+  const {
+    attribute,
+    name,
+    disabled,
+    labelAction,
+    required,
+    description,
+    error,
+    intlLabel } = props;
+  const { onChange, value } = useField( name );
   const [ editorInstance, setEditorInstance ] = useState(false);
   const { formatMessage } = useIntl();
   const { maxLengthCharacters:maxLength , ...options } = attribute.options;
@@ -33,9 +36,6 @@ const CKEditorInput = ({
   const editorConfig = configurator.getEditorConfig();
 
   const wordCounter = useRef( null );
-
-  const strapiTheme = localStorage.getItem( 'STRAPI_THEME' );
-  const GlobalStyling = getGlobalStyling( strapiTheme );
 
   const [ mediaLibVisible, setMediaLibVisible ] = useState( false );
 
@@ -61,22 +61,22 @@ const CKEditorInput = ({
   };
 
   return (
-    <Field
+    <Field.Root
       name= {name }
       id={ name }
       // GenericInput calls formatMessage and returns a string for the error
       error={ error }
       hint={ description && formatMessage( description ) }
     >
-      <Stack spacing={ 1 }>
-        <FieldLabel action={ labelAction } required={ required }>
-          { formatMessage( intlLabel ) }
-        </FieldLabel>
+      <Flex spacing={ 1 } alignItems="normal" style={ { 'flexDirection': 'column' } }>
+        <Field.Label action={ labelAction } required={ required }>
+          { intlLabel ? formatMessage( intlLabel ) : name }
+        </Field.Label>
         <GlobalStyling />
         <CKEditor
-          editor={ window.CKEditor5.editorClassic.ClassicEditor }
+          editor={ ClassicEditor }
           disabled={ disabled }
-          data={ value }
+          data={ value ?? '' }
           onReady={ ( editor ) => {
             const wordCountPlugin = editor.plugins.get( 'WordCount' );
             const wordCountWrapper = wordCounter.current;
@@ -101,34 +101,22 @@ const CKEditorInput = ({
           config={ editorConfig }
         />
         <div ref={ wordCounter }></div>
-        <FieldHint />
-        <FieldError />
-      </Stack>
+        <Field.Hint />
+        <Field.Error />
+      </Flex>
       <MediaLib isOpen={ mediaLibVisible } onChange={ handleChangeAssets } onToggle={ handleToggleMediaLib } />
-    </Field>
+    </Field.Root>
   );
 };
 
-CKEditorInput.defaultProps = {
-  description: null,
-  disabled: false,
-  error: null,
-  labelAction: null,
-  required: false,
-  value: '',
-};
-
 CKEditorInput.propTypes = {
-  intlLabel: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
   attribute: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.object,
   disabled: PropTypes.bool,
   error: PropTypes.string,
   labelAction: PropTypes.object,
-  required: PropTypes.bool,
-  value: PropTypes.string,
+  required: PropTypes.bool
 };
 
 export default CKEditorInput;
