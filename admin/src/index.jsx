@@ -46,7 +46,7 @@ export default {
             },
             description: {
               id: 'ckeditor.licenseKey.description',
-              defaultMessage: "Don't have a license key? Visit https://portal.ckeditor.com/pricing to get one.",
+              defaultMessage: "Don't have a license key? Visit https://portal.ckeditor.com/checkout?plan=free to receive it.",
             },
             name: 'options.licenseKey',
             type: 'text',
@@ -169,7 +169,7 @@ export default {
           } ),
           licenseKey: yup.string().required( {
             id: 'ckeditor.licenseKey.error.required',
-            defaultMessage: 'Editor license key is required. Visit https://portal.ckeditor.com/pricing to learn more.',
+            defaultMessage: 'Editor license key is required. Visit https://portal.ckeditor.com/checkout?plan=free to receive it.',
           } ),
         } ),
       },
