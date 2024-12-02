@@ -39,7 +39,7 @@ With `yarn`:
 yarn add @ckeditor/strapi-plugin-ckeditor
 ```
 
-Then, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin and sending the usage information to https://proxy-event.ckeditor.com, by adding the rule to `config/middlewares.ts` in your Strapi project root:
+Then, add the Content Security Policy configuration to allow loading CKEditor 5 from https://cdn.ckeditor.com origin and sending the editor usage information to https://proxy-event.ckeditor.com, by adding the rule to `config/middlewares.ts` in your Strapi project root:
 
 ```js
 export default [
