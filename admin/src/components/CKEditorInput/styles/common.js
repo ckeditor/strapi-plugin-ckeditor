@@ -120,4 +120,8 @@ export const style = css`
       }
     }
   }
+  // Fix: Prevent dropdown panel to be hidden by Strapi left sidebar
+  :root {
+    --ck-toolbar-dropdown-max-width: 40vw;
+  }
 `;
