@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (March 17, 2025)
+
+We are happy to announce the release of CKEditor 5 Official Integration v0.2.1.
+
+### Release highlights
+
+In this release, we fixed the issue related to integrating the custom field in repeatable components. See [#143](https://github.com/ckeditor/strapi-plugin-ckeditor/issues/143) to learn more.
+
 ## 0.2.0 (December 2, 2024)
 
 We are happy to announce the release of CKEditor 5 Official Integration v0.2.0.
