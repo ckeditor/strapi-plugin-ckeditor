@@ -1,0 +1,14 @@
+{
+  "ckeditor.label": "CKEditor",
+  "ckeditor.description": "适用于各种场景的富文本编辑器",
+  "ckeditor.preset.label": "选择编辑器版本",
+  "ckeditor.preset.description": "你需要更多还是更少的功能？",
+  "ckeditor.preset.light.label": "轻量版",
+  "ckeditor.preset.standard.label": "标准版",
+  "ckeditor.settings": "设置",
+  "ckeditor.required.label": "必填字段",
+  "ckeditor.required.description": "如果此字段为空，您将无法创建条目",
+  "ckeditor.preset.error.required'": "编辑器预设是必需的",
+  "ckeditor.output.label": "选择输出类型",
+  "ckeditor.output.description": "决定您希望以 HTML 还是 Markdown 格式获取输出"
+}
