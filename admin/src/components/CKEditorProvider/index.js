@@ -35,7 +35,7 @@ const CKEditorProvider = ( {
   }, [] )
 
   const cloud = useCKEditorCloud( {
-    version: '44.0.0',
+    version: '47.5.0',
     plugins: {
       CKEditorInput: async () => ( await import('../CKEditorInput') ).CKEditorInput
     }
