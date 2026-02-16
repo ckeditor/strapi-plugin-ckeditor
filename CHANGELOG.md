@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 (February 16, 2025)
+
+We are happy to announce the release of CKEditor 5 Official Integration v0.2.2.
+
+### Release highlights
+
+In this release, we updated the CKEditor 5 version to [v47.5.0](https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md#4750-february-11-2026).
+
 ## 0.2.1 (March 17, 2025)
 
 We are happy to announce the release of CKEditor 5 Official Integration v0.2.1.
