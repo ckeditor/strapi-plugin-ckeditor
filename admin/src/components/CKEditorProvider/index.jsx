@@ -1,5 +1,6 @@
-import { memo, useEffect } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useCKEditorCloud } from '@ckeditor/ckeditor5-react';
+import licenseRequests from '../../api/license';
 
 const CKEditorProvider = ( {
   attribute,
@@ -57,4 +58,47 @@ const CKEditorProvider = ( {
   )
 }
 
-export default memo( CKEditorProvider );
+const MemoizedCKEditorProvider = memo( CKEditorProvider );
+
+const CKEditorProviderWrapper = ({
+  attribute,
+  name,
+  disabled = false,
+  labelAction = null,
+  required = false,
+  description = null,
+  error = null,
+  intlLabel,
+}) => {
+  const { options } = attribute;
+
+  const [licenseKey, setLicenseKey] = useState(options?.licenseKey);
+
+  useEffect(() => {
+    licenseRequests.getLicense().then((response) => {
+      const licenseKeyFromServer = response.data?.ckeditor?.licenseKey;
+      if (licenseKeyFromServer) {
+        setLicenseKey(licenseKeyFromServer);
+      }
+    })
+  }, []);
+
+  if (!licenseKey) {
+    return <div>Loading License Key...</div>
+  }
+
+  return (
+    <MemoizedCKEditorProvider
+      attribute={{ ...attribute, options: { ...options, licenseKey } }}
+      name={ name }
+      disabled={ disabled }
+      labelAction={ labelAction }
+      required={ required }
+      description={ description }
+      error={ error }
+      intlLabel={ intlLabel }
+    />
+  );
+}
+
+export default CKEditorProviderWrapper;
